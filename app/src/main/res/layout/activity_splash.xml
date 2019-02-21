@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+
+        <variable
+            name="iSplash"
+            type="com.example.newproject.splash.ISplash"/>
+
+        <variable
+            name="splash"
+            type="com.example.newproject.splash.SplashVM"/>
+    </data>
+
+    <android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:background="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".splash.SplashActivity">
+
+
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_46sdp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/_20sdp"
+                        android:text="@string/welcome_toolbar_textview"/>
+
+                </RelativeLayout>
+
+
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <RelativeLayout
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <RelativeLayout
+                android:id="@+id/textViewLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/welcome_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:textColor="@color/textColor"
+                    android:text="@{splash.firstSlideText1}"
+                    android:textStyle="bold"
+                    android:padding="@dimen/_8sdp"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:textSize="@dimen/_16sdp"
+                    android:layout_centerHorizontal="true"/>
+
+                <TextView
+                    android:id="@+id/swipe_text"
+                    android:layout_width="wrap_content"
+                    android:visibility="visible"
+                    android:layout_height="wrap_content"                    android:padding="@dimen/_8sdp"
+                    android:textColor="@color/textColor"
+                    android:text="@{splash.firstSlideText2}"
+                    android:textSize="@dimen/_12sdp"
+                    android:layout_below="@id/welcome_text"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_centerHorizontal="true"/>
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:padding="@dimen/_8sdp"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:textColor="@color/textColor"
+                    android:text="@{splash.otherSlideText}"
+                    android:textSize="@dimen/_12sdp"
+                    android:layout_centerHorizontal="true"/>
+                
+            </RelativeLayout>
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewPager"
+                android:background="@android:color/white"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/textViewLayout"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_margin="@dimen/_32sdp"
+                android:layout_height="@dimen/_200sdp"/>
+
+
+
+            <Button
+                android:id="@+id/lets_go_button"
+                android:layout_width="match_parent"
+                android:background="@drawable/button_bg"
+                android:visibility="gone"
+                android:text="@string/get_started_button_label"
+                android:textColor="@android:color/white"
+                android:textAllCaps="false"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/viewPager"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_30sdp"/>
+
+
+
+
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/SliderDots"
+            android:layout_below="@+id/lets_go_button"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_200sdp"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="@dimen/_24sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</layout>
+
