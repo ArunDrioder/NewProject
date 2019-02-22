@@ -93,13 +93,13 @@
                 android:layout_marginEnd="@dimen/_25sdp"
                 android:layout_marginTop="@dimen/_25sdp"
                 app:cardCornerRadius="@dimen/_10sdp"
-                app:cardElevation="@dimen/_10sdp">
+                app:cardElevation="@dimen/_6sdp">
 
                 <LinearLayout
 
                     android:background="@drawable/bg_layout"
                     android:layout_width="match_parent"
-                    android:paddingBottom="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_1sdp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:orientation="vertical">
@@ -114,13 +114,14 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:paddingBottom="@dimen/_15sdp"
+                            android:paddingBottom="@dimen/_10sdp"
                             android:paddingTop="@dimen/_15sdp"
                             android:paddingEnd="@dimen/_10sdp"
                             android:gravity="end"
                             android:textColor="@android:color/white"
                             android:background="@color/colorPrimary"
-                            android:text="Name"/>
+                            android:text="Name"
+                            android:textSize="@dimen/_10sdp"/>
 
 
                         <EditText
@@ -129,7 +130,7 @@
                             android:layout_weight="2"
                             android:paddingTop="@dimen/_15sdp"
                             android:paddingStart="@dimen/_10sdp"
-                            android:paddingBottom="@dimen/_15sdp"
+                            android:paddingBottom="@dimen/_10sdp"
                             android:background="@android:color/transparent"
                             android:hint="First and Last name"
                             android:textSize="@dimen/_10sdp"/>
@@ -150,13 +151,14 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:paddingBottom="@dimen/_15sdp"
+                            android:paddingBottom="@dimen/_10sdp"
                             android:paddingTop="@dimen/_15sdp"
                             android:paddingEnd="@dimen/_10sdp"
                             android:gravity="end"
                             android:textColor="@android:color/white"
                             android:background="@color/colorPrimary"
-                            android:text="Email"/>
+                            android:text="Email"
+                            android:textSize="@dimen/_10sdp"/>
 
 
                         <EditText
@@ -165,7 +167,7 @@
                             android:layout_weight="2"
                             android:paddingTop="@dimen/_15sdp"
                             android:paddingStart="@dimen/_10sdp"
-                            android:paddingBottom="@dimen/_15sdp"
+                            android:paddingBottom="@dimen/_10sdp"
                             android:background="@android:color/transparent"
                             android:hint="Email Address"
                             android:textSize="@dimen/_10sdp"/>
@@ -187,13 +189,14 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:paddingBottom="@dimen/_15sdp"
+                            android:paddingBottom="@dimen/_10sdp"
                             android:paddingTop="@dimen/_15sdp"
                             android:paddingEnd="@dimen/_10sdp"
                             android:gravity="end"
                             android:textColor="@android:color/white"
                             android:background="@color/colorPrimary"
-                            android:text="Phone"/>
+                            android:text="Phone"
+                            android:textSize="@dimen/_10sdp"/>
 
 
                         <EditText
@@ -202,7 +205,7 @@
                             android:layout_weight="2"
                             android:paddingTop="@dimen/_15sdp"
                             android:paddingStart="@dimen/_10sdp"
-                            android:paddingBottom="@dimen/_15sdp"
+                            android:paddingBottom="@dimen/_10sdp"
                             android:background="@android:color/transparent"
                             android:hint="Phone Number"
                             android:textSize="@dimen/_10sdp"/>
@@ -221,10 +224,11 @@
                 android:layout_marginTop="@dimen/_20sdp"
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
-                android:background="@color/white"/>
+                android:background="@color/view_bgcolor"/>
 
 
         </LinearLayout>
+
 
 
     </android.support.v4.widget.NestedScrollView>

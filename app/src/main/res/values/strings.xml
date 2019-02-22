@@ -39,4 +39,20 @@
     <string name="international_transport_header">International Transport</string>
     <string name="labour_supply_header">Labour Supply</string>
     <string name="custom_clearence_header">Custom Clearence</string>
+    <string name="current_address_title_textview">YOUR CURRENT ADDRESS</string>
+    <string name="hint_street_num">Street &amp;  Number</string>
+    <string name="zip_postal_code_hint">Zip/Postal Code</string>
+    <string name="city_hint">City</string>
+    <string name="country_textview">Country</string>
+    <string name="button_continue_text">Continue</string>
+    <string name="overview_header">OVERVIEW</string>
+    <string name="overview_text_header">OVERVIEW</string>
+    <string name="rooms_and_photos_title">ROOMS AND PHOTOS</string>
+    <string name="add_a_room_button_label">Add a room</string>
+    <string name="start_adding_rrom_header">START</string>
+    <string name="rooms_title_textview">ROOMS</string>
+    <string name="textview_floor">Floor</string>
+    <string name="photos_textview">PHOTOS</string>
+    <string name="add_photo_textview">Add photo</string>
+    <string name="save_button_textview">Save</string>
 </resources>

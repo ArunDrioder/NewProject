@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CustomClearence"></activity>
+        <activity android:name=".ResidentialAddRoomActivity"></activity>
+        <activity android:name=".OverviewResidentialActivity" />
+        <activity android:name=".CustomClearence" />
         <activity android:name=".LabourActivity" />
         <activity android:name=".InternationalActivity" />
         <activity android:name=".TemproaryActivity" />

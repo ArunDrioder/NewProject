@@ -31,7 +31,7 @@
                     android:textStyle="bold"
                     android:layout_centerInParent="true"
                     android:textSize="@dimen/_16sdp"
-                    android:text="@string/basic_info_header"/>
+                    android:text="@string/residential_removal_textview"/>
 
             </RelativeLayout>
 
@@ -93,13 +93,13 @@
                 android:layout_marginEnd="@dimen/_25sdp"
                 android:layout_marginTop="@dimen/_25sdp"
                 app:cardCornerRadius="@dimen/_10sdp"
-                app:cardElevation="@dimen/_10sdp">
+                app:cardElevation="@dimen/_6sdp">
 
                 <LinearLayout
 
                     android:background="@drawable/bg_layout"
                     android:layout_width="match_parent"
-                    android:paddingBottom="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_1sdp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:orientation="vertical">
@@ -114,13 +114,14 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:paddingBottom="@dimen/_15sdp"
+                            android:paddingBottom="@dimen/_10sdp"
                             android:paddingTop="@dimen/_15sdp"
                             android:paddingEnd="@dimen/_10sdp"
                             android:gravity="end"
                             android:textColor="@android:color/white"
                             android:background="@color/colorPrimary"
-                            android:text="Name"/>
+                            android:text="Name"
+                            android:textSize="@dimen/_10sdp"/>
 
 
                         <EditText
@@ -129,7 +130,7 @@
                             android:layout_weight="2"
                             android:paddingTop="@dimen/_15sdp"
                             android:paddingStart="@dimen/_10sdp"
-                            android:paddingBottom="@dimen/_15sdp"
+                            android:paddingBottom="@dimen/_10sdp"
                             android:background="@android:color/transparent"
                             android:hint="First and Last name"
                             android:textSize="@dimen/_10sdp"/>
@@ -150,13 +151,14 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:paddingBottom="@dimen/_15sdp"
+                            android:paddingBottom="@dimen/_10sdp"
                             android:paddingTop="@dimen/_15sdp"
                             android:paddingEnd="@dimen/_10sdp"
                             android:gravity="end"
                             android:textColor="@android:color/white"
                             android:background="@color/colorPrimary"
-                            android:text="Email"/>
+                            android:text="Email"
+                            android:textSize="@dimen/_10sdp"/>
 
 
                         <EditText
@@ -165,7 +167,7 @@
                             android:layout_weight="2"
                             android:paddingTop="@dimen/_15sdp"
                             android:paddingStart="@dimen/_10sdp"
-                            android:paddingBottom="@dimen/_15sdp"
+                            android:paddingBottom="@dimen/_10sdp"
                             android:background="@android:color/transparent"
                             android:hint="Email Address"
                             android:textSize="@dimen/_10sdp"/>
@@ -187,13 +189,14 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:paddingBottom="@dimen/_15sdp"
+                            android:paddingBottom="@dimen/_10sdp"
                             android:paddingTop="@dimen/_15sdp"
                             android:paddingEnd="@dimen/_10sdp"
                             android:gravity="end"
                             android:textColor="@android:color/white"
                             android:background="@color/colorPrimary"
-                            android:text="Phone"/>
+                            android:text="Phone"
+                            android:textSize="@dimen/_10sdp"/>
 
 
                         <EditText
@@ -202,7 +205,7 @@
                             android:layout_weight="2"
                             android:paddingTop="@dimen/_15sdp"
                             android:paddingStart="@dimen/_10sdp"
-                            android:paddingBottom="@dimen/_15sdp"
+                            android:paddingBottom="@dimen/_10sdp"
                             android:background="@android:color/transparent"
                             android:hint="Phone Number"
                             android:textSize="@dimen/_10sdp"/>
@@ -221,7 +224,226 @@
                 android:layout_marginTop="@dimen/_20sdp"
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
-                android:background="@color/white"/>
+                android:background="@color/view_bgcolor"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:src="@drawable/current_address"
+                    android:layout_marginStart="@dimen/_40sdp"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_34sdp"
+                    android:text="@string/current_address_title_textview"
+                    android:textStyle="bold"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/_12sdp"/>
+            </LinearLayout>
+
+
+
+
+            <android.support.v7.widget.CardView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginEnd="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_25sdp"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="@dimen/_6sdp">
+
+                <LinearLayout
+
+                    android:background="@drawable/bg_layout"
+                    android:layout_width="match_parent"
+                    android:paddingBottom="@dimen/_1sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_15sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:gravity="end"
+                            android:textColor="@android:color/white"
+                            android:background="@color/colorPrimary"
+                            android:text="Address"
+                            android:textSize="@dimen/_10sdp"/>
+
+
+                        <EditText
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:paddingTop="@dimen/_15sdp"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:background="@android:color/transparent"
+                            android:hint="@string/hint_street_num"
+                            android:textSize="@dimen/_10sdp"/>
+
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/view_bgcolor" />
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_15sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:gravity="end"
+                            android:textColor="@android:color/white"
+                            android:background="@color/colorPrimary"
+                            android:text="Zip Code"
+                            android:textSize="@dimen/_10sdp"/>
+
+
+                        <EditText
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:paddingTop="@dimen/_15sdp"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:background="@android:color/transparent"
+                            android:hint="@string/zip_postal_code_hint"
+                            android:textSize="@dimen/_10sdp"/>
+
+                    </LinearLayout>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#e2e2e2" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_15sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:gravity="end"
+                            android:textColor="@android:color/white"
+                            android:background="@color/colorPrimary"
+                            android:text="@string/city_hint"
+                            android:textSize="@dimen/_10sdp"/>
+
+
+                        <EditText
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:paddingTop="@dimen/_15sdp"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:background="@android:color/transparent"
+                            android:hint="@string/city_hint"
+                            android:textSize="@dimen/_10sdp"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#e2e2e2" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_15sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:gravity="end"
+                            android:textColor="@android:color/white"
+                            android:background="@color/colorPrimary"
+                            android:text="@string/country_textview"
+                            android:textSize="@dimen/_10sdp"/>
+
+
+                        <EditText
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:paddingTop="@dimen/_15sdp"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:background="@android:color/transparent"
+                            android:hint="@string/country_textview"
+                            android:textSize="@dimen/_10sdp"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+
+
+            <Button
+                android:id="@+id/Continue_button"
+                android:layout_width="match_parent"
+                android:background="@drawable/button_bg"
+                android:visibility="visible"
+                android:text="@string/button_continue_text"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:textAllCaps="false"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_40sdp"
+                android:layout_marginEnd="@dimen/_40sdp"/>
+
+
+
+
+
 
 
         </LinearLayout>
