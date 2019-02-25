@@ -1,52 +1,56 @@
 package com.example.newproject;
+
 import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Build;
-import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
-
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
 
 public class ResidentialAddRoomActivity extends AppCompatActivity {
 
-    ImageView imageView;
+    ImageView alertimageView;
     Button okButton;
     LinearLayout addPhoto;
+    ImageView imageView;
+    Button closeImage;
+    RelativeLayout imageRelLayout;
+    static final int CAPTURE_IMAGE_REQUEST = 1;
+
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_residential_add_room);
-        imageView = (ImageView)findViewById(R.id.showAlert);
+        alertimageView = (ImageView)findViewById(R.id.showAlert);
         addPhoto = (LinearLayout)findViewById(R.id.addPhotoLayout);
+        imageView = (ImageView)findViewById(R.id.resultimageView);
+        imageRelLayout = (RelativeLayout)findViewById(R.id.imageRelativeLayout);
+        closeImage = (Button)findViewById(R.id.closeCaptureImage);
 
 
-        imageView.setOnClickListener(new View.OnClickListener() {
+
+
+        alertimageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showCustomDialog();
@@ -59,31 +63,41 @@ public class ResidentialAddRoomActivity extends AppCompatActivity {
 
 
 
+                    captureImage();
 
-
+            }
+        });
+        closeImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageRelLayout.setVisibility(View.GONE);
             }
         });
 
     }
 
+    private void captureImage() {
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[] { Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE }, 0);
+        }
+        else {
+
+            Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            startActivityForResult(takePictureIntent, CAPTURE_IMAGE_REQUEST);
+        }
+    }
 
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        Bundle extras = data.getExtras();
+        Bitmap imageBitmap = (Bitmap) extras.get("data");
+        imageRelLayout.setVisibility(View.VISIBLE);
+        imageView.setVisibility(View.VISIBLE);
+        imageView.setImageBitmap(imageBitmap);
+    }
 
 
 
@@ -112,16 +126,21 @@ public class ResidentialAddRoomActivity extends AppCompatActivity {
         if (requestCode == 0) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED
                     && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
+                captureImage();
+            }
+            else {
+
+                displayMessage(getBaseContext(),"Camera function is required for this app to work properly");
 
             }
         }
 
     }
 
-
-
-
-
+    private void displayMessage(Context context, String message)
+    {
+        Toast.makeText(context,message,Toast.LENGTH_LONG).show();
+    }
 
 
 }

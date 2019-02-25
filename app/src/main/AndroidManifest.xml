@@ -2,8 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.newproject">
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
         android:allowBackup="true"
@@ -12,18 +18,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-
-
-
-
-
-
-        <activity android:name=".ResidentialAddRoomActivity"></activity>
+        <activity android:name=".International.AirOutboundActivity"></activity>
+        <activity android:name=".ResidentialAddRoomActivity" />
         <activity android:name=".OverviewResidentialActivity" />
         <activity android:name=".CustomClearence" />
         <activity android:name=".LabourActivity" />
-        <activity android:name=".InternationalActivity" />
+        <activity android:name=".International.InternationalActivity" />
         <activity android:name=".TemproaryActivity" />
         <activity android:name=".DoorToDoor" />
         <activity android:name=".TruckRentalActivity" />
