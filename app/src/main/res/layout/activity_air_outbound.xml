@@ -731,7 +731,7 @@
                     android:id="@+id/cityRadioButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/door_to_door_radioText"
+                    android:text="@string/city_hint"
                     android:textSize="18sp"/>
 
                 <RadioButton
@@ -739,7 +739,7 @@
                     android:layout_width="match_parent"
                     android:layout_marginTop="@dimen/_8sdp"
                     android:layout_height="wrap_content"
-                    android:text="@string/door_to_port_radiotext"
+                    android:text="@string/country_textview"
                     android:textSize="18sp"/>
 
             </RadioGroup>
@@ -934,16 +934,6 @@
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
                 android:background="@color/view_bgcolor"/>
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NewProject</string>
+    <string name="app_name">PackAndMove</string>
     <string name="welcome_toolbar_textview">WELCOME</string>
     <string name="welcome_textview">WELCOME TO THE BOURNES MOVING HOUSE QUOTE APP</string>
     <string name="get_started">Swipe to get started</string>
@@ -88,4 +88,13 @@
     <string name="myanmar_custom_rule_textview">Myanmar Custom Rule</string>
     <string name="add_document_textview">Add Document</string>
     <string name="submit_button_textview">SUBMIT</string>
+    <string name="use_elevator_alert_textview">Do you want to use Elevator?</string>
+    <string name="user_registration_header_textview">NEW USER REGISTRATION</string>
+    <string name="fill_your_details_header_textview">Fill Your Details</string>
+    <string name="register_btn_text">REGISTER</string>
+    <string name="already_registered">ALREADY REGISTERED? LOGIN HERE</string>
+    <string name="login_header">LOGIN</string>
+    <string name="otp_hint_textview">OTP</string>
+    <string name="login_user_prompt">Enter your mobile number and OTP to login</string>
+    <string name="get_otp_to_loginbtn_text">GET OTP TO LOGIN</string>
 </resources>

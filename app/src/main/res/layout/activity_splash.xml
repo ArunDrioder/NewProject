@@ -6,11 +6,11 @@
 
         <variable
             name="iSplash"
-            type="com.example.newproject.splash.ISplash"/>
+            type="com.ninositsolution.packandmove.splash.ISplash"/>
 
         <variable
             name="splash"
-            type="com.example.newproject.splash.SplashVM"/>
+            type="com.ninositsolution.packandmove.splash.SplashVM"/>
     </data>
 
     <android.support.design.widget.CoordinatorLayout
