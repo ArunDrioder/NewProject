@@ -29,6 +29,9 @@ public class AirOutboundActivity extends AppCompatActivity implements AdapterVie
     Button residentialYesBtn;
     Button residentialNoBtn;
     private Spinner spin;
+    private Spinner floorSpin;
+    private Spinner weightSpinner;
+    private Spinner spinnerVolume;
     private String apartmentselected;
     private String minicondoselected;
 
@@ -43,9 +46,9 @@ public class AirOutboundActivity extends AppCompatActivity implements AdapterVie
 
 
          spin = (Spinner) findViewById(R.id.spinner);
-        Spinner floorSpin = (Spinner)findViewById(R.id.spinnerFloor);
-        Spinner weightSpinner = (Spinner)findViewById(R.id.spinnerWeight);
-        Spinner spinnerVolume = (Spinner)findViewById(R.id.spinnerVolume);
+         floorSpin = (Spinner)findViewById(R.id.spinnerFloor);
+         weightSpinner = (Spinner)findViewById(R.id.spinnerWeight);
+         spinnerVolume = (Spinner)findViewById(R.id.spinnerVolume);
         weightSpinner.setOnItemSelectedListener(this);
         spin.setOnItemSelectedListener(this);
         floorSpin.setOnItemSelectedListener(this);

@@ -4,8 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".International.AirOutboundActivity">
+    android:layout_height="match_parent">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -1045,7 +1044,7 @@
 
 
                 <RelativeLayout
-                    android:id="@+id/docRelativeLayout"
+                    android:id="@+id/photoRelativeLayout"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -1058,7 +1057,7 @@
 
                     <ImageView
                         android:layout_height="@dimen/_80sdp"
-                        android:id="@+id/docView"
+                        android:id="@+id/photoView"
                         android:layout_width="@dimen/_60sdp"
                         android:visibility="gone"
                         android:scaleType="fitXY"
@@ -1066,7 +1065,7 @@
                         android:layout_marginStart="@dimen/_20sdp"
                         android:layout_gravity="center_vertical"/>
                     <Button
-                        android:id="@+id/closeDoc"
+                        android:id="@+id/closePhoto"
                         android:background="@drawable/ic_cancel_green_24dp"
                         android:layout_width="@dimen/_20sdp"
                         android:layout_height="@dimen/_20sdp"
@@ -1076,7 +1075,7 @@
                 </RelativeLayout>
 
                 <LinearLayout
-                    android:id="@+id/addDocLayout"
+                    android:id="@+id/addPhotoLayout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -1118,7 +1117,7 @@
 
 
                 <RelativeLayout
-                    android:id="@+id/imageRelativeLayout"
+                    android:id="@+id/docRelativeLayout"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -1131,7 +1130,7 @@
 
                     <ImageView
                         android:layout_height="@dimen/_80sdp"
-                        android:id="@+id/resultimageView"
+                        android:id="@+id/resultDocimageView"
                         android:layout_width="@dimen/_60sdp"
                         android:visibility="gone"
                         android:scaleType="fitXY"
@@ -1139,7 +1138,7 @@
                         android:layout_marginStart="@dimen/_20sdp"
                         android:layout_gravity="center_vertical"/>
                     <Button
-                        android:id="@+id/closeCaptureImage"
+                        android:id="@+id/closeDocCaptureImage"
                         android:background="@drawable/ic_cancel_green_24dp"
                         android:layout_width="@dimen/_20sdp"
                         android:layout_height="@dimen/_20sdp"
@@ -1149,7 +1148,7 @@
                 </RelativeLayout>
 
                 <LinearLayout
-                    android:id="@+id/addPhotoLayout"
+                    android:id="@+id/addDocLayout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"

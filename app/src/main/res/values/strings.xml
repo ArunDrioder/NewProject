@@ -97,4 +97,8 @@
     <string name="otp_hint_textview">OTP</string>
     <string name="login_user_prompt">Enter your mobile number and OTP to login</string>
     <string name="get_otp_to_loginbtn_text">GET OTP TO LOGIN</string>
+    <string name="country_of_origin_textview">Country Of Origin</string>
+    <string name="estimated_date_of_arrival_textview">Estimated date of Arrival</string>
+    <string name="select_floor_textview">Select Floor</string>
+    <string name="air_inbound_header">AIR INBOUND</string>
 </resources>

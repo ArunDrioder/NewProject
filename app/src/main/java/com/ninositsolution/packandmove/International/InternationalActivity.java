@@ -49,6 +49,13 @@ public class InternationalActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        airShipmentInbound.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(InternationalActivity.this,AirInboundActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
