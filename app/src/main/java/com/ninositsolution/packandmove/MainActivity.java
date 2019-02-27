@@ -1,9 +1,13 @@
 package com.ninositsolution.packandmove;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toolbar;
@@ -16,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout residentialLayout;
     LinearLayout officeremovallayout;
     ImageView logOut;
+    Button logOutYesAlertBtn,logOutNoAlertBtn;
 
     LinearLayout factory,packaging,carton,longDistance,truck,doortodoor,temproary,international,labour,custom;
 
@@ -42,8 +47,33 @@ public class MainActivity extends AppCompatActivity {
         logOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(intent);
+                ViewGroup viewGroup = findViewById(android.R.id.content);
+                final View dialogView = LayoutInflater.from(MainActivity.this).inflate(R.layout.custom_logout_alert, viewGroup, false);
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setView(dialogView);
+                logOutYesAlertBtn = (Button)dialogView.findViewById(R.id.logOutYesAlertBtn);
+                logOutNoAlertBtn = (Button)dialogView.findViewById(R.id.logOutNoAlertBtn);
+                final AlertDialog alertDialog = builder.create();
+                logOutYesAlertBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent  intent = new Intent(MainActivity.this,LoginActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                });
+
+                logOutNoAlertBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        alertDialog.dismiss();
+                    }
+                });
+                alertDialog.show();
+
+
+
+
             }
         });
 
@@ -137,4 +167,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
 }

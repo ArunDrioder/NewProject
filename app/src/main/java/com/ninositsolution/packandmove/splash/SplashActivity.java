@@ -55,6 +55,7 @@ public class SplashActivity extends AppCompatActivity{
             public void onClick(View v) {
                 Intent intent = new Intent(SplashActivity.this, RegistrationActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 

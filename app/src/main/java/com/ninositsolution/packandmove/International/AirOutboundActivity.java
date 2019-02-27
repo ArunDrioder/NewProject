@@ -168,6 +168,7 @@ public class AirOutboundActivity extends AppCompatActivity implements AdapterVie
 
                         }
                     });
+                    alertDialog.show();
 
                 }
 
@@ -195,26 +196,14 @@ public class AirOutboundActivity extends AppCompatActivity implements AdapterVie
                         }
                     });
 
+                    alertDialog.show();
+
+
 
                 }
 
                 break;
-
-
-
-
-
         }
-
-
-
-
-
-
-
-
-
-
     }
 
     @Override
