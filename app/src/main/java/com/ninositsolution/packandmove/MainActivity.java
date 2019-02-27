@@ -4,14 +4,19 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toolbar;
 
 import com.ninositsolution.packandmove.International.InternationalActivity;
+import com.ninositsolution.packandmove.Login.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
 
     LinearLayout residentialLayout;
     LinearLayout officeremovallayout;
+    ImageView logOut;
+
     LinearLayout factory,packaging,carton,longDistance,truck,doortodoor,temproary,international,labour,custom;
 
 
@@ -32,6 +37,18 @@ public class MainActivity extends AppCompatActivity {
         international = (LinearLayout)findViewById(R.id.internationalLayout);
         labour = (LinearLayout)findViewById(R.id.labour_layout);
         custom = (LinearLayout)findViewById(R.id.customLayout);
+        logOut = (ImageView)findViewById(R.id.logOutImgView);
+
+        logOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
         residentialLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

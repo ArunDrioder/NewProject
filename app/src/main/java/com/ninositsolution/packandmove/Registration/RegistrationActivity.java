@@ -6,11 +6,11 @@ import android.view.View;
 import android.widget.Button;
 
 import com.ninositsolution.packandmove.Login.LoginActivity;
+import com.ninositsolution.packandmove.Otp.OTPVerificationActivity;
 import com.ninositsolution.packandmove.R;
 
 public class RegistrationActivity extends AppCompatActivity {
-    Button register;
-    Button alreadyRegdLogin;
+    Button register,loginFromRegister;
 
 
 
@@ -19,22 +19,24 @@ public class RegistrationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
         register = (Button)findViewById(R.id.register_button);
-        alreadyRegdLogin = (Button)findViewById(R.id.login_btn_from_register);
+        loginFromRegister = (Button)findViewById(R.id.login_btn_from_register);
+
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
+                Intent intent = new Intent(RegistrationActivity.this, OTPVerificationActivity.class);
                 startActivity(intent);
             }
         });
 
-        alreadyRegdLogin.setOnClickListener(new View.OnClickListener() {
+        loginFromRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
                 startActivity(intent);
+
             }
         });
-    }
-}
+
+}}

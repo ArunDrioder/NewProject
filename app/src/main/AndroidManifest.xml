@@ -18,7 +18,8 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".International.AirInboundActivity"></activity>
+        <activity android:name=".Otp.OTPVerificationActivity"></activity>
+        <activity android:name=".International.AirInboundActivity" />
         <activity android:name=".Login.LoginActivity" />
         <activity android:name=".Registration.RegistrationActivity" />
         <activity android:name=".International.AirOutboundActivity" />

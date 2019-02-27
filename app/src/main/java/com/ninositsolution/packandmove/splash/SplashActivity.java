@@ -53,7 +53,7 @@ public class SplashActivity extends AppCompatActivity{
         letsgo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
+                Intent intent = new Intent(SplashActivity.this, RegistrationActivity.class);
                 startActivity(intent);
             }
         });

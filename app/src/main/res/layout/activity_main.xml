@@ -14,6 +14,7 @@
         android:layout_height="wrap_content">
 
         <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_46sdp">
 
@@ -31,6 +32,18 @@
                     android:textStyle="bold"
                     android:textSize="@dimen/_16sdp"
                     android:text="@string/mainactivity_header"/>
+
+                <ImageView
+                    android:id="@+id/logOutImgView"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:src="@drawable/ic_power_settings_new_white_24dp"/>
+
+
+
 
             </RelativeLayout>
 

@@ -15,8 +15,8 @@ public class LoginActivity extends AppCompatActivity {
 
     Button login;
     Button linkToRegister;
-    LinearLayout otpLayout;
-    View view1;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +24,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         login = (Button)findViewById(R.id.login_btn);
         linkToRegister = (Button)findViewById(R.id.register_btn_from_login);
-        otpLayout = (LinearLayout)findViewById(R.id.otpLayout);
-        view1 = (View)findViewById(R.id.view1);
+
 
         linkToRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,16 +33,7 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                view1.setVisibility(View.VISIBLE);
-                otpLayout.setVisibility(View.VISIBLE);
-                login.setText(R.string.login_header);
 
-
-            }
-        });
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
