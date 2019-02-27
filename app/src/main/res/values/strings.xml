@@ -113,4 +113,6 @@
     <string name="register_btntext">REGISTER</string>
     <string name="logout_warning_alert_text">Do you really want to Logout?</string>
     <string name="exit_warning_text">Do you really want to Exit?</string>
+    <string name="Open">Open Navigation Drawer</string>
+    <string name="Close">Close Navigation Drawer </string>
 </resources>
