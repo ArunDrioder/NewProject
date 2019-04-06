@@ -29,7 +29,7 @@
     <string name="name_hint">First and Last name</string>
     <string name="email_hint">Email Address</string>
     <string name="phone_hint">Phone Number</string>
-    <string name="factory_heavy_header">Factory and Heavy Equipment Removal</string>
+    <string name="factory_heavy_header">Factory &amp; Heavy Equipment Removal</string>
     <string name="packaging_header">Packaging</string>
     <string name="carton_box_supply_textview">Carton Box Supply</string>
     <string name="long_distance_header">Long Distance Transportation</string>

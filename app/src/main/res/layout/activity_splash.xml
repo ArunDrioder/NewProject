@@ -113,7 +113,7 @@
                 android:layout_below="@id/textViewLayout"
                 android:layout_width="@dimen/_300sdp"
                 android:layout_margin="@dimen/_32sdp"
-                android:layout_height="@dimen/_328sdp"/>
+                android:layout_height="@dimen/_310sdp"/>
 
             <Button
                 android:id="@+id/lets_go_button"
@@ -126,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/viewPager"
                 android:layout_marginStart="@dimen/_30sdp"
-                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_38sdp"
                 android:layout_marginEnd="@dimen/_30sdp"/>
 
 
@@ -137,7 +137,7 @@
             android:layout_below="@+id/lets_go_button"
             android:orientation="horizontal"
             android:layout_gravity="bottom|center"
-            android:layout_marginBottom="@dimen/_4sdp"
+            android:layout_marginBottom="@dimen/_18sdp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 

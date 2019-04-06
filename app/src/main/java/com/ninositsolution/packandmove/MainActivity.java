@@ -16,10 +16,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.ninositsolution.packandmove.International.InternationalActivity;
 import com.ninositsolution.packandmove.Login.LoginActivity;
+import com.ninositsolution.packandmove.customclearence.CustomClearenceActivity;
+import com.ninositsolution.packandmove.laboursupply.LabourSupplyActivity;
+import com.ninositsolution.packandmove.temporarystorage.TemproaryStorageActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -182,7 +184,7 @@ public class MainActivity extends AppCompatActivity {
         temproary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,TemproaryActivity.class);
+                Intent intent = new Intent(MainActivity.this, TemproaryStorageActivity.class);
                 startActivity(intent);
             }
         });
@@ -196,14 +198,14 @@ public class MainActivity extends AppCompatActivity {
         labour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,LabourActivity.class);
+                Intent intent = new Intent(MainActivity.this, LabourSupplyActivity.class);
                 startActivity(intent);
             }
         });
         custom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,CustomClearence.class);
+                Intent intent = new Intent(MainActivity.this, CustomClearenceActivity.class);
                 startActivity(intent);
             }
         });
