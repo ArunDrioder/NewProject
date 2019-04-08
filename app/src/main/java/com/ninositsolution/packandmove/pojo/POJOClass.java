@@ -1,36 +1,29 @@
 package com.ninositsolution.packandmove.pojo;
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class POJOClass {
 
     @SerializedName("status")
+    @Expose
     private String status;
 
     @SerializedName("message")
-
+    @Expose
     private String message;
 
     @SerializedName("otp")
-
+    @Expose
     private Integer otp;
 
-
     @SerializedName("user_id")
+    @Expose
     private String user_id;
 
-    public String getToken() {
-        return token;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
-    }
-
-    @SerializedName("token")
-    private String token;
-
-
+    @SerializedName("data")
+    @Expose
+    private Data data;
 
     public String getStatus() {
         return status;
@@ -62,5 +55,13 @@ public class POJOClass {
 
     public void setUser_id(String user_id) {
         this.user_id = user_id;
+    }
+
+    public Data getData() {
+        return data;
+    }
+
+    public void setData(Data data) {
+        this.data = data;
     }
 }
