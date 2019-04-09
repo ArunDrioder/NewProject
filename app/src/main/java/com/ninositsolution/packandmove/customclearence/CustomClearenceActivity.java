@@ -43,7 +43,7 @@ public class CustomClearenceActivity extends AppCompatActivity {
 
                 importBtn.setBackground(getResources().getDrawable(R.drawable.custom_import_button));
                 importBtn.setTextColor(getResources().getColor(R.color.white));
-                exportBtn.setBackground(getResources().getDrawable(R.drawable.button_ok_alert_background));
+                exportBtn.setBackground(getResources().getDrawable(R.drawable.custom_export_button_unselected));
                 exportBtn.setTextColor(getResources().getColor(R.color.colorPrimary));
 
 
@@ -65,7 +65,7 @@ public class CustomClearenceActivity extends AppCompatActivity {
                 {
                     airImportLayout.setVisibility(View.GONE);
                 }
-                importBtn.setBackground(getResources().getDrawable(R.drawable.button_ok_alert_background));
+                importBtn.setBackground(getResources().getDrawable(R.drawable.custom_import_button_unselected));
                 importBtn.setTextColor(getResources().getColor(R.color.colorPrimary));
                 exportBtn.setBackground(getResources().getDrawable(R.drawable.custom_export_button));
                 exportBtn.setTextColor(getResources().getColor(R.color.white));

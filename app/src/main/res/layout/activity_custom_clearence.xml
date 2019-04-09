@@ -152,7 +152,7 @@
                     android:id="@+id/import_btn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/button_ok_alert_background"
+                    android:background="@drawable/custom_import_button_unselected"
                     android:text="@string/import_button"
                     android:textAllCaps="false"
                     android:layout_marginTop="@dimen/_10sdp"
