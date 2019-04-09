@@ -1051,10 +1051,6 @@
                     android:visibility="gone"
                     android:layout_gravity="center_vertical">
 
-
-
-
-
                     <ImageView
                         android:layout_height="@dimen/_80sdp"
                         android:id="@+id/photoView"

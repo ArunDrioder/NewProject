@@ -19,9 +19,13 @@ import android.widget.Toast;
 
 import com.ninositsolution.packandmove.International.InternationalActivity;
 import com.ninositsolution.packandmove.Login.LoginActivity;
+import com.ninositsolution.packandmove.cartonboxsupply.CartonActivity;
 import com.ninositsolution.packandmove.customclearence.CustomClearenceActivity;
 import com.ninositsolution.packandmove.laboursupply.LabourSupplyActivity;
+import com.ninositsolution.packandmove.longdistancetransportation.LongDistanceActivity;
+import com.ninositsolution.packandmove.packaging.PackagingActivity;
 import com.ninositsolution.packandmove.temporarystorage.TemproaryStorageActivity;
+import com.ninositsolution.packandmove.truckrental.TruckRentalActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -148,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
         packaging.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,PackagingActivity.class);
+                Intent intent = new Intent(MainActivity.this, PackagingActivity.class);
                 startActivity(intent);
             }
         });
@@ -163,14 +167,14 @@ public class MainActivity extends AppCompatActivity {
         longDistance.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,LongDistanceActivity.class);
+                Intent intent = new Intent(MainActivity.this, LongDistanceActivity.class);
                 startActivity(intent);
             }
         });
         truck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,TruckRentalActivity.class);
+                Intent intent = new Intent(MainActivity.this, TruckRentalActivity.class);
                 startActivity(intent);
             }
         });

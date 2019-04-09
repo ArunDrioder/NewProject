@@ -123,15 +123,6 @@ public class OTPVerificationActivity extends AppCompatActivity {
 
                     }
                 });
-
-
-
-
-
-
-
-
-
             }
         });
     }

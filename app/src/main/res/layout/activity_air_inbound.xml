@@ -516,7 +516,7 @@ android:layout_height="match_parent">
 
 
         <Spinner
-                android:id="@+id/residentialInboundSpinner"
+            android:id="@+id/residentialInboundSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_25sdp"

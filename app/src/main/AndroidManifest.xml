@@ -34,10 +34,10 @@
         <activity android:name=".International.InternationalActivity" />
         <activity android:name=".temporarystorage.TemproaryStorageActivity" />
         <activity android:name=".DoorToDoor" />
-        <activity android:name=".TruckRentalActivity" />
-        <activity android:name=".LongDistanceActivity" />
-        <activity android:name=".CartonActivity" />
-        <activity android:name=".PackagingActivity" />
+        <activity android:name=".truckrental.TruckRentalActivity" />
+        <activity android:name=".longdistancetransportation.LongDistanceActivity" />
+        <activity android:name=".cartonboxsupply.CartonActivity" />
+        <activity android:name=".packaging.PackagingActivity" />
         <activity android:name=".FactoryActivity" />
         <activity android:name=".OfficeRemovalActivity" />
         <activity android:name=".BasicInfoActivity" />
