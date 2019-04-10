@@ -57,30 +57,41 @@
             android:background="@android:color/white"
             android:orientation="vertical">
 
+
+
+
             <LinearLayout
-                android:layout_width="match_parent"
+                android:id="@+id/doorToDooraddPhotoLayout"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@android:color/white"
-                android:orientation="horizontal">
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/_4sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:background="@drawable/bg_layout">
+
+
 
                 <ImageView
-                    android:layout_width="@dimen/_25sdp"
-                    android:layout_height="@dimen/_25sdp"
-                    android:layout_marginTop="@dimen/_30sdp"
-                    android:src="@drawable/contact_info"
-                    android:layout_marginStart="@dimen/_40sdp"/>
-
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:src="@drawable/ic_add_circle_black_24dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/_8sdp"
-                    android:layout_marginTop="@dimen/_34sdp"
-                    android:text="@string/contact_info_text"
-                    android:textStyle="bold"
-                    android:textColor="@color/textColor"
-                    android:textSize="@dimen/_12sdp"/>
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:text="@string/add_photo_textview"
+                    android:textAlignment="center"/>
+
+
             </LinearLayout>
+
+
+
+
+
 
 
 
@@ -121,7 +132,7 @@
                             android:gravity="end"
                             android:textColor="@android:color/white"
                             android:background="@color/colorPrimary"
-                            android:text="Name"
+                            android:text="@string/pickup_from_textview"
                             android:textSize="@dimen/_10sdp"/>
 
 
@@ -133,7 +144,7 @@
                             android:paddingStart="@dimen/_10sdp"
                             android:paddingBottom="@dimen/_10sdp"
                             android:background="@android:color/transparent"
-                            android:hint="First and Last name"
+                            android:hint="@string/place_hint"
                             android:textSize="@dimen/_10sdp"/>
 
                     </LinearLayout>
@@ -158,7 +169,7 @@
                             android:gravity="end"
                             android:textColor="@android:color/white"
                             android:background="@color/colorPrimary"
-                            android:text="Email"
+                            android:text="@string/pickup_date_hint"
                             android:textSize="@dimen/_10sdp"/>
 
 
@@ -170,7 +181,7 @@
                             android:paddingStart="@dimen/_10sdp"
                             android:paddingBottom="@dimen/_10sdp"
                             android:background="@android:color/transparent"
-                            android:hint="Email Address"
+                            android:hint="@string/date_format"
                             android:textSize="@dimen/_10sdp"/>
 
                     </LinearLayout>
@@ -196,7 +207,7 @@
                             android:gravity="end"
                             android:textColor="@android:color/white"
                             android:background="@color/colorPrimary"
-                            android:text="Phone"
+                            android:text="@string/pickup_time_textview"
                             android:textSize="@dimen/_10sdp"/>
 
 
@@ -208,14 +219,234 @@
                             android:paddingStart="@dimen/_10sdp"
                             android:paddingBottom="@dimen/_10sdp"
                             android:background="@android:color/transparent"
-                            android:hint="Phone Number"
+                            android:hint="@string/choose_time_hint"
+                            android:textSize="@dimen/_10sdp"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#e2e2e2" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_15sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:gravity="end"
+                            android:textColor="@android:color/white"
+                            android:background="@color/colorPrimary"
+                            android:text="@string/delivery_to_textview"
+                            android:textSize="@dimen/_10sdp"/>
+
+
+                        <EditText
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:paddingTop="@dimen/_15sdp"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:background="@android:color/transparent"
+                            android:hint="@string/place_hint"
+                            android:textSize="@dimen/_10sdp"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#e2e2e2" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_15sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:gravity="end"
+                            android:textColor="@android:color/white"
+                            android:background="@color/colorPrimary"
+                            android:text="@string/delivery_date_textview"
+                            android:textSize="@dimen/_10sdp"/>
+
+
+                        <EditText
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:paddingTop="@dimen/_15sdp"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:background="@android:color/transparent"
+                            android:hint="@string/date_format"
                             android:textSize="@dimen/_10sdp"/>
 
                     </LinearLayout>
 
 
-                </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#e2e2e2" />
 
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_15sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:gravity="end"
+                            android:textColor="@android:color/white"
+                            android:background="@color/colorPrimary"
+                            android:text="Delivery Time"
+                            android:textSize="@dimen/_10sdp"/>
+
+
+                        <EditText
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:paddingTop="@dimen/_15sdp"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:background="@android:color/transparent"
+                            android:hint="@string/choose_time_hint"
+                            android:textSize="@dimen/_10sdp"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#e2e2e2" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_15sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:gravity="end"
+                            android:textColor="@android:color/white"
+                            android:background="@color/colorPrimary"
+                            android:text="@string/types_of_goods_textview"
+                            android:textSize="@dimen/_10sdp"/>
+
+
+                        <EditText
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:paddingTop="@dimen/_15sdp"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:background="@android:color/transparent"
+                            android:hint="@string/name_goods"
+                            android:textSize="@dimen/_10sdp"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#e2e2e2" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_15sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:gravity="end"
+                            android:textColor="@android:color/white"
+                            android:background="@color/colorPrimary"
+                            android:text="@string/estimated_weight_textview"
+                            android:textSize="@dimen/_10sdp"/>
+
+
+                        <EditText
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:paddingTop="@dimen/_15sdp"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:background="@android:color/transparent"
+                            android:hint="@string/kilograms_hint"
+                            android:textSize="@dimen/_10sdp"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#e2e2e2" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_15sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:gravity="end"
+                            android:textColor="@android:color/white"
+                            android:background="@color/colorPrimary"
+                            android:text="@string/estimated_volume"
+                            android:textSize="@dimen/_10sdp"/>
+
+
+                        <EditText
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:paddingTop="@dimen/_15sdp"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:background="@android:color/transparent"
+                            android:hint="@string/cc_hint"
+                            android:textSize="@dimen/_10sdp"/>
+
+                    </LinearLayout>
+                </LinearLayout>
             </android.support.v7.widget.CardView>
 
 
@@ -226,6 +457,40 @@
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
                 android:background="@color/view_bgcolor"/>
+
+
+
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_layout"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_30sdp"
+                android:inputType="textMultiLine"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_100sdp"
+                android:textAlignment="center"
+                android:hint="@string/remarks_textview_hint"/>
+
+
+
+
+            <Button
+                android:id="@+id/doorToDoor_submit_button"
+                android:layout_width="match_parent"
+                android:background="@drawable/button_bg"
+                android:visibility="visible"
+                android:text="@string/submit_button_textview"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:textAllCaps="false"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_40sdp"
+                android:layout_marginEnd="@dimen/_40sdp"/>
 
 
         </LinearLayout>

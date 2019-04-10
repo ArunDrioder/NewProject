@@ -151,4 +151,23 @@
     <string name="port_textview">Port</string>
     <string name="arrival_port_textview">Arrival Airport</string>
     <string name="airport_hint">Airport</string>
+    <string name="pickup_from_textview">Pickup From</string>
+    <string name="place_hint">Place</string>
+    <string name="pickup_date_hint">Pickup Date</string>
+    <string name="date_format">DD/MM/YYYY</string>
+    <string name="choose_time_hint">Choose Time</string>
+    <string name="pickup_time_textview">Pickup Time</string>
+    <string name="deliver_time_textview">Deliver Time</string>
+    <string name="delivery_date_textview">Delivery Date</string>
+    <string name="delivery_time_textview">Delivery Time</string>
+    <string name="types_of_goods_textview">Types of Goods</string>
+    <string name="name_goods">Name</string>
+    <string name="cc_hint">CC</string>
+    <string name="delivery_address_textview">DELIVERY ADDRESS</string>
+    <string name="sea_outbound_header">SEA OUTBOUND</string>
+    <string name="shipment_type_textview">Shipment Type</string>
+    <string name="twenty_feet_shipment_option">20 feet</string>
+    <string name="fourty_feet_shipment_option">40 feet</string>
+    <string name="lcl_shipment_option">LCL</string>
+    <string name="sea_inbound_header">SEA INBOUND</string>
 </resources>

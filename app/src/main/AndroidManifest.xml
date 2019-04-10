@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ninositsolution.packandmove">
-    <uses-permission android:name="android.permission.INTERNET"/>
-        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <uses-feature
         android:name="android.hardware.camera"
@@ -20,9 +21,9 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Otp.OTPVerificationActivity">
-
-        </activity>
+        <activity android:name=".International.SeaOutBoundActivity"></activity>
+        <activity android:name=".International.SeaInBoundActivity" />
+        <activity android:name=".Otp.OTPVerificationActivity" />
         <activity android:name=".International.AirInboundActivity" />
         <activity android:name=".Login.LoginActivity" />
         <activity android:name=".splash.SplashActivity" />

@@ -4,20 +4,26 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.TextView;
 
 import com.ninositsolution.packandmove.R;
 
 public class CustomClearenceActivity extends AppCompatActivity {
 
     LinearLayout airExportLyout,airImportLayout;
-    Button exportBtn, importBtn;
+    Button airExportBtn, airImportBtn;
+    RadioButton seaRadioBtn, airRadioBtn;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_custom_clearence);
+
 
         airExportLyout = findViewById(R.id.airExportLayout);
 
@@ -26,10 +32,18 @@ public class CustomClearenceActivity extends AppCompatActivity {
         airImportLayout  =findViewById(R.id.airImportLayout);
         airImportLayout.setVisibility(View.GONE);
 
-        exportBtn = findViewById(R.id.export_btn);
-        importBtn = findViewById(R.id.import_btn);
 
-        importBtn.setOnClickListener(new View.OnClickListener() {
+
+
+
+
+        airExportBtn = findViewById(R.id.air_export_btn);
+        airImportBtn = findViewById(R.id.air_import_btn);
+
+        seaRadioBtn = findViewById(R.id.seaRadioBtn);
+        airRadioBtn = findViewById(R.id.airRadioBtn);
+
+        airImportBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (airExportLyout.getVisibility() == View.VISIBLE)
@@ -41,19 +55,23 @@ public class CustomClearenceActivity extends AppCompatActivity {
                     airImportLayout.setVisibility(View.VISIBLE);
                 }
 
-                importBtn.setBackground(getResources().getDrawable(R.drawable.custom_import_button));
-                importBtn.setTextColor(getResources().getColor(R.color.white));
-                exportBtn.setBackground(getResources().getDrawable(R.drawable.custom_export_button_unselected));
-                exportBtn.setTextColor(getResources().getColor(R.color.colorPrimary));
+
+
+
+
+
+                airImportBtn.setBackground(getResources().getDrawable(R.drawable.custom_import_button));
+                airImportBtn.setTextColor(getResources().getColor(R.color.white));
+                airExportBtn.setBackground(getResources().getDrawable(R.drawable.custom_export_button_unselected));
+                airExportBtn.setTextColor(getResources().getColor(R.color.colorPrimary));
+
 
 
 
             }
         });
 
-
-
-        exportBtn.setOnClickListener(new View.OnClickListener() {
+        airExportBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -65,15 +83,21 @@ public class CustomClearenceActivity extends AppCompatActivity {
                 {
                     airImportLayout.setVisibility(View.GONE);
                 }
-                importBtn.setBackground(getResources().getDrawable(R.drawable.custom_import_button_unselected));
-                importBtn.setTextColor(getResources().getColor(R.color.colorPrimary));
-                exportBtn.setBackground(getResources().getDrawable(R.drawable.custom_export_button));
-                exportBtn.setTextColor(getResources().getColor(R.color.white));
+
+
+
+                airExportBtn.setBackground(getResources().getDrawable(R.drawable.custom_export_button));
+                airExportBtn.setTextColor(getResources().getColor(R.color.white));
+                airImportBtn.setBackground(getResources().getDrawable(R.drawable.custom_import_button_unselected));
+                airImportBtn.setTextColor(getResources().getColor(R.color.colorPrimary));
+
 
 
 
             }
         });
+
+
 
     }
 
