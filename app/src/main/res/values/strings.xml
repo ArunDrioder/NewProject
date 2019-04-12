@@ -193,4 +193,7 @@
     <string name="packaging_no">No</string>
     <string name="no_of_packages_textview">No of Packages</string>
     <string name="labour_textview">Labour</string>
+    <string name="packaging_estimated_date">Estimated date of Packaging</string>
+    <string name="location_textview">Location</string>
+    <string name="current_location_hint">Current Location</string>
 </resources>

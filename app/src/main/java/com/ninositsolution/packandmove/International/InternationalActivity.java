@@ -57,5 +57,21 @@ public class InternationalActivity extends AppCompatActivity {
             }
         });
 
+        seaShipmentInbound.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(InternationalActivity.this, SeaInBoundActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        seaShipmentOutbound.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(InternationalActivity.this,SeaOutBoundActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

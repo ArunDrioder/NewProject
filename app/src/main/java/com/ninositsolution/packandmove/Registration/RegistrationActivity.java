@@ -103,9 +103,11 @@ public class RegistrationActivity extends AppCompatActivity {
                         if (response.code() == 200)
                         {
                             pojoClass = response.body();
+                            Toast.makeText(context, "Error code : "+response.code(), Toast.LENGTH_SHORT).show();
 
 
-                            Log.i(TAG, "code : "+response.code());
+
+                            Log.e(TAG, "code : "+response.code());
 
                                 if (pojoClass.getStatus() != null)
                                 {
