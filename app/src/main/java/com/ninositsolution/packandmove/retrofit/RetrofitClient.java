@@ -14,7 +14,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class RetrofitClient {
 
-    private static final String BASE_URL = "http://192.168.1.38/packandmove/public/api/";
+    private static final String BASE_URL = "http://192.168.1.40/packandmove/public/api/";
 
     private static Retrofit retrofit = null;
 

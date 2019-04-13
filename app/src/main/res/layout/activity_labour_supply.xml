@@ -61,6 +61,7 @@
 
             <RadioGroup
 
+                android:id="@+id/labourSupplyRadioGrp"
                 android:layout_width="wrap_content"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_height="@dimen/_30sdp"
@@ -71,7 +72,8 @@
                     android:id="@+id/containerLoadingRadioBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Container Loading"
+                    android:text="@string/container_loading"
+                    android:checked="true"
 
                     android:textSize="@dimen/_8sdp"/>
 
@@ -80,20 +82,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="Container Unloading"
+                    android:text="@string/container_unloading"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:textSize="@dimen/_8sdp"/>
                 <RadioButton
                     android:id="@+id/generalLabourRadioBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="General labour"
+                    android:text="@string/general_labour"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:textSize="@dimen/_8sdp"/>
-
-
-
-
 
             </RadioGroup>
 

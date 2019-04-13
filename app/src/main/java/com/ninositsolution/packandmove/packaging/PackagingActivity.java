@@ -19,11 +19,7 @@ import com.ninositsolution.packandmove.retrofit.RetrofitClient;
 import com.ninositsolution.packandmove.retrofit.RetrofitInterface;
 import com.ninositsolution.packandmove.utils.Session;
 
-import java.io.IOException;
 
-import io.reactivex.Observable;
-import io.reactivex.schedulers.Schedulers;
-import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -95,7 +91,6 @@ public class PackagingActivity extends AppCompatActivity {
                        if (response.code() == 200)
                        {
                            pojoClass = response.body();
-                           Toast.makeText(context, "Error code : "+response.code(), Toast.LENGTH_SHORT).show();
 
                            Log.e(TAG, "code : "+response.code());
 
@@ -112,10 +107,10 @@ public class PackagingActivity extends AppCompatActivity {
                                }
                                else
                                {
-                                   hideProgressBar();
-                                   Log.e(TAG, "Entered on error Status is: ->" + pojoClass.getStatus());
+                                       hideProgressBar();
+                                       Log.e(TAG, "Entered on error Status is: ->" + pojoClass.getStatus());
 
-                                   Toast.makeText(context, response.body().getMessage(),Toast.LENGTH_LONG).show();
+                                       Toast.makeText(context, response.body().getMessage(),Toast.LENGTH_LONG).show();
 
                                }
                            }

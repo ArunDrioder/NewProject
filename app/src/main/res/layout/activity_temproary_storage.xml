@@ -102,6 +102,7 @@
 
 
                         <EditText
+                            android:id="@+id/storageDate"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
@@ -109,7 +110,7 @@
                             android:paddingStart="@dimen/_10sdp"
                             android:paddingBottom="@dimen/_10sdp"
                             android:background="@android:color/transparent"
-                            android:hint="Date"
+                            android:hint="@string/date_format"
                             android:textSize="@dimen/_10sdp"/>
 
                     </LinearLayout>
@@ -139,6 +140,7 @@
 
 
                         <EditText
+                            android:id="@+id/temporaryStorage"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
@@ -146,7 +148,7 @@
                             android:paddingStart="@dimen/_10sdp"
                             android:paddingBottom="@dimen/_10sdp"
                             android:background="@android:color/transparent"
-                            android:hint="Temporary"
+                            android:hint="@string/temporary"
                             android:textSize="@dimen/_10sdp"/>
 
                     </LinearLayout>
@@ -172,11 +174,12 @@
                             android:gravity="end"
                             android:textColor="@android:color/white"
                             android:background="@color/colorPrimary"
-                            android:text="Long Storage"
+                            android:text="@string/long_storage"
                             android:textSize="@dimen/_10sdp"/>
 
 
                         <EditText
+                            android:id="@+id/longStorage"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
@@ -184,7 +187,7 @@
                             android:paddingStart="@dimen/_10sdp"
                             android:paddingBottom="@dimen/_10sdp"
                             android:background="@android:color/transparent"
-                            android:hint="Permanent"
+                            android:hint="@string/long_storage"
                             android:textSize="@dimen/_10sdp"/>
 
                     </LinearLayout>
@@ -193,6 +196,48 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="#e2e2e2" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_15sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:gravity="end"
+                            android:textColor="@android:color/white"
+                            android:background="@color/colorPrimary"
+                            android:text="@string/types_of_goods_textview"
+                            android:textSize="@dimen/_10sdp"/>
+
+
+                        <EditText
+                            android:id="@+id/typeOfGoods"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:paddingTop="@dimen/_15sdp"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:background="@android:color/transparent"
+                            android:hint="@string/types_of_goods_textview"
+                            android:textSize="@dimen/_10sdp"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#e2e2e2" />
+
+
+
+
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -213,6 +258,7 @@
 
 
                         <EditText
+                            android:id="@+id/storageVolume"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
@@ -220,7 +266,7 @@
                             android:paddingStart="@dimen/_10sdp"
                             android:paddingBottom="@dimen/_10sdp"
                             android:background="@android:color/transparent"
-                            android:hint="Volume"
+                            android:hint="@string/volume_textview"
                             android:textSize="@dimen/_10sdp"/>
 
                     </LinearLayout>
@@ -249,6 +295,7 @@
 
 
                         <EditText
+                            android:id="@+id/storageWeight"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
@@ -256,7 +303,7 @@
                             android:paddingStart="@dimen/_10sdp"
                             android:paddingBottom="@dimen/_10sdp"
                             android:background="@android:color/transparent"
-                            android:hint="Weight"
+                            android:hint="@string/weight_textview"
                             android:textSize="@dimen/_10sdp"/>
 
                     </LinearLayout>
@@ -282,11 +329,12 @@
                             android:gravity="end"
                             android:textColor="@android:color/white"
                             android:background="@color/colorPrimary"
-                            android:text="Estimated Weigfht"
+                            android:text="@string/pickup_from_textview"
                             android:textSize="@dimen/_10sdp"/>
 
 
                         <EditText
+                            android:id="@+id/storageLocation"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
@@ -294,7 +342,7 @@
                             android:paddingStart="@dimen/_10sdp"
                             android:paddingBottom="@dimen/_10sdp"
                             android:background="@android:color/transparent"
-                            android:hint="Weight"
+                            android:hint="@string/location_textview"
                             android:textSize="@dimen/_10sdp"/>
 
                     </LinearLayout>
@@ -306,7 +354,17 @@
 
 
 
+            <ProgressBar
+                android:id="@+id/storage_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_gravity="center"/>
+
+
+
             <EditText
+                android:id="@+id/storageRemarks"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_layout"
@@ -323,7 +381,7 @@
 
 
             <Button
-                android:id="@+id/Continue_button"
+                android:id="@+id/storage_submit_button"
                 android:layout_width="match_parent"
                 android:background="@drawable/button_bg"
                 android:visibility="visible"

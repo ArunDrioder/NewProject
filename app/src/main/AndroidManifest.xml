@@ -34,7 +34,7 @@
         <activity android:name=".laboursupply.LabourSupplyActivity" />
         <activity android:name=".International.InternationalActivity" />
         <activity android:name=".temporarystorage.TemproaryStorageActivity" />
-        <activity android:name=".DoorToDoor" />
+        <activity android:name=".doortodoorservices.DoorToDoorActivity" />
         <activity android:name=".truckrental.TruckRentalActivity" />
         <activity android:name=".longdistancetransportation.LongDistanceActivity" />
         <activity android:name=".cartonboxsupply.CartonActivity" />

@@ -21,6 +21,7 @@ import com.ninositsolution.packandmove.International.InternationalActivity;
 import com.ninositsolution.packandmove.Login.LoginActivity;
 import com.ninositsolution.packandmove.cartonboxsupply.CartonActivity;
 import com.ninositsolution.packandmove.customclearence.CustomClearenceActivity;
+import com.ninositsolution.packandmove.doortodoorservices.DoorToDoorActivity;
 import com.ninositsolution.packandmove.laboursupply.LabourSupplyActivity;
 import com.ninositsolution.packandmove.longdistancetransportation.LongDistanceActivity;
 import com.ninositsolution.packandmove.packaging.PackagingActivity;
@@ -181,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
         doortodoor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,DoorToDoor.class);
+                Intent intent = new Intent(MainActivity.this, DoorToDoorActivity.class);
                 startActivity(intent);
             }
         });

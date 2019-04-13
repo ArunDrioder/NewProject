@@ -196,4 +196,11 @@
     <string name="packaging_estimated_date">Estimated date of Packaging</string>
     <string name="location_textview">Location</string>
     <string name="current_location_hint">Current Location</string>
+    <string name="temporary">Temporary</string>
+    <string name="permanent">Permanent</string>
+    <string name="long_storage">Long Storage</string>
+    <string name="container_loading">Container Loading</string>
+    <string name="container_unloading">Container Unloading</string>
+    <string name="general_labour">General labour</string>
+
 </resources>

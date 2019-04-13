@@ -2,8 +2,10 @@ package com.ninositsolution.packandmove.retrofit;
 import com.ninositsolution.packandmove.Login.pojo.LoginRequest;
 import com.ninositsolution.packandmove.Otp.pojo.OTPRequest;
 import com.ninositsolution.packandmove.Registration.pojo.RegistrationRequest;
+import com.ninositsolution.packandmove.doortodoorservices.pojo.DoorServiceRequest;
 import com.ninositsolution.packandmove.packaging.pojo.PackageRequest;
 import com.ninositsolution.packandmove.pojo.POJOClass;
+import com.ninositsolution.packandmove.temporarystorage.pojo.StorageRequest;
 
 import io.reactivex.Observable;
 import okhttp3.ResponseBody;
@@ -30,6 +32,14 @@ Call<POJOClass> loginApi (@Body LoginRequest loginRequest);
 
 @POST("insert/package")
 Call<POJOClass> packageApi (@Header("Authorization") String token, @Body PackageRequest packageRequest);
+
+@POST("insert/storage")
+Call<POJOClass> storageApi  (@Header("Authorization") String token, @Body StorageRequest storageRequest);
+
+@POST("insert/door_delivery_service")
+Call<POJOClass> doorServiceApi (@Header("Authorization") String token, @Body DoorServiceRequest doorServiceRequest);
+
+
 
 
 
