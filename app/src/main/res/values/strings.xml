@@ -202,5 +202,20 @@
     <string name="container_loading">Container Loading</string>
     <string name="container_unloading">Container Unloading</string>
     <string name="general_labour">General labour</string>
+    <string name="work_place">Work Place</string>
+    <string name="place">Place</string>
+    <string name="distance_meter">Distance Meter</string>
+    <string name="container_size">Container Size</string>
+    <string name="container_size_twenty">20\'</string>
+    <string name="container_size_fourty">40\'</string>
+    <string name="book">Book</string>
+    <string name="no_of_labours">No of Labours</string>
+    <string name="labours">Labours</string>
+    <string name="no_of_hours">No of Hours</string>
+    <string name="hours">Hours</string>
+    <string name="no_of_days">No of Days</string>
+    <string name="days">Days</string>
+    <string name="floors">Floors</string>
+
 
 </resources>

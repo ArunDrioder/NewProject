@@ -834,32 +834,7 @@
 
 
 
-                <RelativeLayout
-                    android:id="@+id/photoRelativeLayout"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    android:layout_gravity="center_vertical">
 
-                    <ImageView
-                        android:layout_height="@dimen/_80sdp"
-                        android:id="@+id/photoView"
-                        android:layout_width="@dimen/_60sdp"
-                        android:visibility="gone"
-                        android:scaleType="fitXY"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:layout_marginStart="@dimen/_20sdp"
-                        android:layout_gravity="center_vertical"/>
-                    <Button
-                        android:id="@+id/closePhoto"
-                        android:background="@drawable/ic_cancel_green_24dp"
-                        android:layout_width="@dimen/_20sdp"
-                        android:layout_height="@dimen/_20sdp"
-                        android:layout_marginStart="@dimen/_10sdp"/>
-
-
-                </RelativeLayout>
 
                 <LinearLayout
                     android:id="@+id/addPhotoLayout"
@@ -903,36 +878,7 @@
 
 
 
-                <RelativeLayout
-                    android:id="@+id/docRelativeLayout"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    android:layout_gravity="center_vertical">
 
-
-
-
-
-                    <ImageView
-                        android:layout_height="@dimen/_80sdp"
-                        android:id="@+id/resultDocimageView"
-                        android:layout_width="@dimen/_60sdp"
-                        android:visibility="gone"
-                        android:scaleType="fitXY"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:layout_marginStart="@dimen/_20sdp"
-                        android:layout_gravity="center_vertical"/>
-                    <Button
-                        android:id="@+id/closeDocCaptureImage"
-                        android:background="@drawable/ic_cancel_green_24dp"
-                        android:layout_width="@dimen/_20sdp"
-                        android:layout_height="@dimen/_20sdp"
-                        android:layout_marginStart="@dimen/_10sdp"/>
-
-
-                </RelativeLayout>
 
                 <LinearLayout
                     android:id="@+id/addDocLayout"

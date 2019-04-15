@@ -3,6 +3,7 @@ import com.ninositsolution.packandmove.Login.pojo.LoginRequest;
 import com.ninositsolution.packandmove.Otp.pojo.OTPRequest;
 import com.ninositsolution.packandmove.Registration.pojo.RegistrationRequest;
 import com.ninositsolution.packandmove.doortodoorservices.pojo.DoorServiceRequest;
+import com.ninositsolution.packandmove.laboursupply.pojo.LabourSupplyRequest;
 import com.ninositsolution.packandmove.packaging.pojo.PackageRequest;
 import com.ninositsolution.packandmove.pojo.POJOClass;
 import com.ninositsolution.packandmove.temporarystorage.pojo.StorageRequest;
@@ -38,6 +39,9 @@ Call<POJOClass> storageApi  (@Header("Authorization") String token, @Body Storag
 
 @POST("insert/door_delivery_service")
 Call<POJOClass> doorServiceApi (@Header("Authorization") String token, @Body DoorServiceRequest doorServiceRequest);
+
+@POST("insert/men_power_supply")
+Call<POJOClass> labourSupplyApi(@Header("Authorization") String token, @Body LabourSupplyRequest labourSupplyRequest);
 
 
 
