@@ -74,6 +74,7 @@
 
 
             <Spinner
+                android:id="@+id/truck_rental_trucktype"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_25sdp"
@@ -109,6 +110,8 @@
 
 
             <RadioGroup
+
+                android:id="@+id/truckRental_packageType"
                 android:layout_margin="@dimen/_20sdp"
 
                 android:layout_width="match_parent"
@@ -116,14 +119,14 @@
                 android:orientation="vertical">
 
                 <RadioButton
-
+                    android:id="@+id/openPackageType"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/open_type_radiooption"
                     android:textSize="18sp"/>
 
                 <RadioButton
-
+                    android:id="@+id/boxPackageType"
                     android:layout_width="match_parent"
                     android:layout_marginTop="@dimen/_8sdp"
                     android:layout_height="wrap_content"
@@ -184,6 +187,7 @@
 
 
                         <EditText
+                            android:id="@+id/truckRental_pickupPlace"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
@@ -221,6 +225,7 @@
 
 
                         <EditText
+                            android:id="@+id/truckRental_deliveryPlace"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
@@ -259,6 +264,7 @@
 
 
                         <EditText
+                            android:id="@+id/truckRental_deliveryAddress"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
@@ -335,7 +341,7 @@
             <LinearLayout
                 android:id="@+id/yesLabourLayout"
                 android:layout_width="match_parent"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
@@ -398,6 +404,7 @@
 
 
                             <EditText
+                                android:id="@+id/noOfRentalLabours"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2"
@@ -435,6 +442,7 @@
 
 
                             <EditText
+                                android:id="@+id/rental_typesOfGoods"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2"
@@ -473,6 +481,7 @@
 
 
                             <EditText
+                                android:id="@+id/rental_quantity"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2"
@@ -509,6 +518,7 @@
 
 
                             <EditText
+                                android:id="@+id/rental_volume"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2"
@@ -616,6 +626,7 @@
 
 
                         <EditText
+                            android:id="@+id/truckRental_distance"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
@@ -643,33 +654,6 @@
 
 
 
-            <LinearLayout
-                android:id="@+id/addPhotoLayout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingBottom="@dimen/_4sdp"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_30sdp"
-                android:background="@drawable/bg_layout">
-
-
-
-                <ImageView
-                    android:layout_width="@dimen/_40sdp"
-                    android:layout_height="@dimen/_40sdp"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:src="@drawable/ic_add_circle_black_24dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_4sdp"
-                    android:text="@string/add_photo_textview"
-                    android:textAlignment="center"/>
-
-
-            </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
@@ -696,6 +680,7 @@
 
 
                 <EditText
+                    android:id="@+id/truckRental_remarks"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_layout"
@@ -717,6 +702,27 @@
                     android:layout_marginStart="@dimen/_20sdp"
                     android:layout_marginEnd="@dimen/_20sdp"
                     android:background="@color/view_bgcolor"/>
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/truckRental_RecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            </android.support.v7.widget.RecyclerView>
+
+        </LinearLayout>
+
 
 
 

@@ -7,6 +7,7 @@ import com.ninositsolution.packandmove.laboursupply.pojo.LabourSupplyRequest;
 import com.ninositsolution.packandmove.packaging.pojo.PackageRequest;
 import com.ninositsolution.packandmove.pojo.POJOClass;
 import com.ninositsolution.packandmove.temporarystorage.pojo.StorageRequest;
+import com.ninositsolution.packandmove.truckrental.pojo.TruckRentalRequest;
 
 import io.reactivex.Observable;
 import okhttp3.ResponseBody;
@@ -43,6 +44,8 @@ Call<POJOClass> doorServiceApi (@Header("Authorization") String token, @Body Doo
 @POST("insert/men_power_supply")
 Call<POJOClass> labourSupplyApi(@Header("Authorization") String token, @Body LabourSupplyRequest labourSupplyRequest);
 
+@POST("insert/truck_rental")
+Call<POJOClass> truckRentalApi(@Header("Authorization") String token, @Body TruckRentalRequest truckRentalRequest);
 
 
 

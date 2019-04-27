@@ -11,12 +11,14 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.ninositsolution.packandmove.R;
@@ -29,16 +31,19 @@ public class DoorRecyclerViewAdapter extends RecyclerView.Adapter<DoorRecyclerVi
 
     private Context mContext;
     private List<String> picturesList;
+    private OnItemClickListener clickListener;
 
     private static final int REQUEST_CAMERA = 100;
+    private static final String TAG = "DoorRecyclerAdapter";
     private static final int RESULT_LOAD_IMAGE = 101;
 
 
 
-    public DoorRecyclerViewAdapter(ArrayList<String> picturesList, Context context  )
+    public DoorRecyclerViewAdapter(ArrayList<String> picturesList, Context context, OnItemClickListener  onItemClickListener)
     {
         this.picturesList = picturesList;
         this.mContext = context;
+        clickListener = onItemClickListener;
         notifyDataSetChanged();
 
     }
@@ -49,11 +54,7 @@ public class DoorRecyclerViewAdapter extends RecyclerView.Adapter<DoorRecyclerVi
     {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.door_recycler_adapter,parent,false);
-        return new DoorRecyclerViewAdapter.MyViewHolder(view);
-
-
-
-
+        return new DoorRecyclerViewAdapter.MyViewHolder(view, clickListener);
     }
 
     @Override
@@ -63,18 +64,23 @@ public class DoorRecyclerViewAdapter extends RecyclerView.Adapter<DoorRecyclerVi
         {
             if (picturesList.size() == 5)
             {
-                myViewHolder.doorServiceAddPhotoLayout.setVisibility(View.GONE);
+                if (myViewHolder.doorServiceAddPhotoLayout.getVisibility() == View.VISIBLE)
+                {
+                    myViewHolder.doorServiceAddPhotoLayout.setVisibility(View.GONE);
+                }
+
             }
+
             else
             {
                 myViewHolder.doorServiceAddPhotoLayout.setVisibility(View.VISIBLE);
             }
-
-
         }
 
         else
         {
+            myViewHolder.doorServiceAddPhotoLayout.setVisibility(View.GONE);
+
             myViewHolder.doorImageLayout.setVisibility(View.VISIBLE);
 
             File file =new File(picturesList.get(position));
@@ -82,16 +88,6 @@ public class DoorRecyclerViewAdapter extends RecyclerView.Adapter<DoorRecyclerVi
 
         }
 
-
-        myViewHolder.removeDoorImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-            {
-                picturesList.remove(position);
-                notifyDataSetChanged();
-
-            }
-        });
     }
 
     @Override
@@ -108,28 +104,47 @@ public class DoorRecyclerViewAdapter extends RecyclerView.Adapter<DoorRecyclerVi
         LinearLayout doorImageLayout,doorServiceAddPhotoLayout;
         ImageView addedDoorImage;
         Button removeDoorImage;
+        OnItemClickListener onItemClickListener;
 
-
-
-
-        public MyViewHolder(@NonNull View itemView)
+        public MyViewHolder(@NonNull View itemView, OnItemClickListener onItemClickListener)
         {
             super(itemView);
+
+            this.onItemClickListener = onItemClickListener;
 
             doorImageLayout = itemView.findViewById(R.id.doorImageLayout);
             doorServiceAddPhotoLayout = itemView.findViewById(R.id.doorServiceAddPhotoLayout);
             addedDoorImage = itemView.findViewById(R.id.doorToDoorAddedImage);
             removeDoorImage = itemView.findViewById(R.id.removeImage);
 
+            doorServiceAddPhotoLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    MyViewHolder.this.onItemClickListener.onClick(view, getAdapterPosition());
+                }
+            });
+
+            removeDoorImage.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v)
+                {
+                    MyViewHolder.this.onItemClickListener.onRemoved(getAdapterPosition());
+                }
+            });
+
+
 
         }
+
     }
-
-
-    public interface onItemClickListener
-    {
-        public void onItemClickListener(int position);
-    }
-
 
 }
+
+
+
+
+
+
+
+

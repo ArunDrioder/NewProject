@@ -49,6 +49,12 @@ public class DoorServiceRequest {
     @Expose
     public String remark;
 
+    @SerializedName("upload_photos")
+    @Expose
+    public String upload_photos;
+
+
+
     public String getUser_id() {
         return user_id;
     }
@@ -135,5 +141,13 @@ public class DoorServiceRequest {
 
     public void setRemark(String remark) {
         this.remark = remark;
+    }
+
+    public String getUpload_photos() {
+        return upload_photos;
+    }
+
+    public void setUpload_photos(String upload_photos) {
+        this.upload_photos = upload_photos;
     }
 }
