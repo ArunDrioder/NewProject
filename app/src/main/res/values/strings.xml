@@ -113,11 +113,11 @@
     <string name="register_btntext">REGISTER</string>
     <string name="logout_warning_alert_text">Do you really want to Logout?</string>
     <string name="exit_warning_text">Do you really want to Exit?</string>
-    <string name="box_size_label_one">16 &quot;  x 16 &quot; x 12 &quot;</string>
-    <string name="box_size_label_two">18 &quot;  x 18 &quot; x 16 &quot;</string>
-    <string name="box_size_label_three">18 &quot;  x 18 &quot; x 24 &quot;</string>
-    <string name="box_size_label_four">22 &quot;  x 22 &quot; x 22 &quot;</string>
-    <string name="box_size_label_five">15 &quot;  x 15 &quot; x 10 &quot;</string>
+    <string name="box_size_label_one">16\" X 16\" X 12\"</string>
+    <string name="box_size_label_two">18\" X 18\" X 16\"</string>
+    <string name="box_size_label_three">18\" X 18\" X 24\"</string>
+    <string name="box_size_label_four">22\" X 22\" X 22\"</string>
+    <string name="box_size_label_five">15\" X 15\" X 10\"</string>
     <string name="Open">Open Navigation Drawer</string>
     <string name="Close">Close Navigation Drawer </string>
     <string name="size_and_no_of_boxes"><![CDATA[Size & No of Boxes]]></string>
@@ -216,6 +216,7 @@
     <string name="no_of_days">No of Days</string>
     <string name="days">Days</string>
     <string name="floors">Floors</string>
+    <string name="no_of_pieces">No of Pieces</string>
 
 
 </resources>

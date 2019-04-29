@@ -34,6 +34,7 @@ import com.ninositsolution.packandmove.retrofit.RetrofitClient;
 import com.ninositsolution.packandmove.retrofit.RetrofitInterface;
 import com.ninositsolution.packandmove.utils.Session;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.ArrayList;
@@ -206,7 +207,8 @@ public class DoorToDoorActivity extends AppCompatActivity implements OnItemClick
     }
 
 
-    private void captureImage() {
+    private void captureImage()
+    {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0);
         } else {
@@ -255,7 +257,7 @@ public class DoorToDoorActivity extends AppCompatActivity implements OnItemClick
 
     @Override
 
-protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
         super.onActivityResult(requestCode, resultCode,data);
 
@@ -265,8 +267,11 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data)
             Matrix mat = new Matrix();
             mat.postRotate(Integer.parseInt("270"));
             Bitmap bMapRotate = Bitmap.createBitmap(photo, 0, 0, photo.getWidth(), photo.getHeight(), mat, true);
-            doorArrayList.add(getPath(context, data.getData()));
-            Log.i(TAG,"doorArrayList->" +doorArrayList);
+            Uri tempUri = getImageUri(getApplicationContext(), photo);
+
+            Log.i(TAG,"path is: ->" +getRealPathFromURI(tempUri));
+
+            doorArrayList.add(getRealPathFromURI(tempUri));
             doorRecyclerViewAdapter.notifyDataSetChanged();
 
         }
@@ -274,41 +279,36 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data)
         if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && data != null)
         {
             Uri selectedImageURI = data.getData();
-            doorArrayList.add(getPath(context, data.getData()));
+
             doorRecyclerViewAdapter.notifyDataSetChanged();
             Log.i(TAG,"doorArrayList->" +doorArrayList);
+            doorArrayList.add(getRealPathFromURI(data.getData()));
+
         }
 
     }
 
 
-    private static String getPath(Context context, Uri data)
+    public Uri getImageUri(Context inContext, Bitmap inImage) {
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+        String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
+        return Uri.parse(path);
+    }
+
+
+
+    public String getRealPathFromURI(Uri uri) {
+        Cursor cursor = context.getContentResolver().query(uri, null, null, null, null);
+        cursor.moveToFirst();
+        int idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
+        return cursor.getString(idx);
+    }
+
+
+    private String convertTobase64(String path)
+
     {
-        String result = null;
-        String[] proj = { MediaStore.Images.Media.DATA };
-        Cursor cursor = context.getContentResolver( ).query( data, proj, null, null, null );
-        if(cursor != null){
-            if ( cursor.moveToFirst( ))
-            {
-                int column_index = cursor.getColumnIndexOrThrow( proj[0] );
-                result = cursor.getString(column_index);
-            }
-            cursor.close( );
-        }
-        if(result == null) {
-            result = "Not found";
-        }
-        return result;
-
-    }
-
-
-
-
-
-
-
-    private String convertTobase64(String path) {
 
         String base64 = "";
         File file = new File(path);

@@ -84,7 +84,9 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true">
 
                         <TextView
                             android:layout_width="0dp"
@@ -179,7 +181,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_8sdp"
-                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_20sdp"
                 android:text="@string/use_elevator_alert_textview"
                 android:textStyle="bold"
                 android:layout_marginStart="@dimen/_20sdp"
@@ -262,6 +264,7 @@
 
 
                 <EditText
+                    android:id="@+id/longTransport_pickupDate"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
@@ -270,6 +273,8 @@
                     android:paddingBottom="@dimen/_10sdp"
                     android:background="@android:color/transparent"
                     android:hint="@string/date_format"
+                    android:focusable="false"
+                    android:clickable="true"
                     android:textSize="@dimen/_10sdp"/>
 
             </LinearLayout>
@@ -339,7 +344,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_1sdp"
-                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
                 android:background="@color/view_bgcolor"/>
@@ -548,6 +553,7 @@
 
 
                         <EditText
+                            android:id="@+id/longTransport_dropDate"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
@@ -556,6 +562,8 @@
                             android:paddingBottom="@dimen/_10sdp"
                             android:background="@android:color/transparent"
                             android:hint="@string/date_format"
+                            android:focusable="false"
+                            android:clickable="true"
                             android:textSize="@dimen/_10sdp"/>
 
                     </LinearLayout>
@@ -579,7 +587,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_8sdp"
-                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_20sdp"
                 android:text="@string/delivery_time_textview"
                 android:textStyle="bold"
                 android:layout_marginStart="@dimen/_20sdp"
@@ -680,6 +688,7 @@
                             android:paddingBottom="@dimen/_10sdp"
                             android:background="@android:color/transparent"
                             android:hint="@string/kilograms_hint"
+                            android:inputType="numberDecimal"
                             android:textSize="@dimen/_10sdp"/>
 
                     </LinearLayout>
@@ -717,6 +726,7 @@
                             android:paddingBottom="@dimen/_10sdp"
                             android:background="@android:color/transparent"
                             android:hint="@string/volume_textview"
+                            android:inputType="number"
                             android:textSize="@dimen/_10sdp"/>
 
                     </LinearLayout>
@@ -750,7 +760,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_8sdp"
-                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_20sdp"
                 android:text="@string/packaging_header"
                 android:textStyle="bold"
                 android:layout_marginStart="@dimen/_20sdp"
@@ -839,6 +849,7 @@
                             android:paddingTop="@dimen/_15sdp"
                             android:paddingStart="@dimen/_10sdp"
                             android:paddingBottom="@dimen/_10sdp"
+                            android:inputType="number"
                             android:background="@android:color/transparent"
                             android:hint="@string/no_of_packages_textview"
                             android:textSize="@dimen/_10sdp"/>
@@ -924,11 +935,6 @@
 
                         </LinearLayout>
 
-
-
-
-
-
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
 
@@ -954,7 +960,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_8sdp"
-                android:layout_marginTop="@dimen/_34sdp"
+                android:layout_marginTop="@dimen/_20sdp"
                 android:text="@string/types_of_goods_textview"
                 android:layout_marginStart="@dimen/_20sdp"
                 android:textStyle="bold"
@@ -989,7 +995,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_8sdp"
-                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:text="@string/special_instructions_textview"
                 android:textStyle="bold"
                 android:layout_marginStart="@dimen/_20sdp"
@@ -1016,23 +1022,26 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_1sdp"
-                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
                 android:background="@color/view_bgcolor"/>
 
 
 
+
             <Button
+                android:id="@+id/longDistance_submitBtn"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorPrimary"
+                android:background="@drawable/button_bg"
+                android:visibility="visible"
                 android:text="@string/submit_button_textview"
+                android:textColor="@android:color/white"
                 android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_10sdp"/>
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_40sdp"/>
 
 
 

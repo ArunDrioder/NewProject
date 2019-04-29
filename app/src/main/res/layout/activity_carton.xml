@@ -2,6 +2,7 @@
 <android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -101,7 +102,9 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true">
 
                         <TextView
                             android:layout_width="0dp"
@@ -124,6 +127,7 @@
                             android:paddingTop="@dimen/_15sdp"
                             android:paddingStart="@dimen/_10sdp"
                             android:paddingBottom="@dimen/_10sdp"
+                            android:inputType="number"
                             android:background="@android:color/transparent"
                             android:hint="@string/no_of_boxes_hint"
                             android:textSize="@dimen/_10sdp"/>
@@ -150,7 +154,7 @@
                             android:gravity="end"
                             android:textColor="@android:color/white"
                             android:background="@color/colorPrimary"
-                            android:text="@string/box_size_label_one"
+                            android:text="@string/box_size_label_two"
                             android:textSize="@dimen/_10sdp"/>
 
 
@@ -161,6 +165,8 @@
                             android:paddingTop="@dimen/_15sdp"
                             android:paddingStart="@dimen/_10sdp"
                             android:paddingBottom="@dimen/_10sdp"
+                            android:inputType="number"
+
                             android:background="@android:color/transparent"
                             android:hint="@string/no_of_boxes_hint"
                             android:textSize="@dimen/_10sdp"/>
@@ -188,7 +194,7 @@
                             android:gravity="end"
                             android:textColor="@android:color/white"
                             android:background="@color/colorPrimary"
-                            android:text="@string/box_size_label_one"
+                            android:text="@string/box_size_label_three"
                             android:textSize="@dimen/_10sdp"/>
 
 
@@ -199,6 +205,8 @@
                             android:paddingTop="@dimen/_15sdp"
                             android:paddingStart="@dimen/_10sdp"
                             android:paddingBottom="@dimen/_10sdp"
+                            android:inputType="number"
+
                             android:background="@android:color/transparent"
                             android:hint="@string/no_of_boxes_hint"
                             android:textSize="@dimen/_10sdp"/>
@@ -225,7 +233,7 @@
                             android:gravity="end"
                             android:textColor="@android:color/white"
                             android:background="@color/colorPrimary"
-                            android:text="@string/box_size_label_one"
+                            android:text="@string/box_size_label_four"
                             android:textSize="@dimen/_10sdp"/>
 
 
@@ -236,6 +244,8 @@
                             android:paddingTop="@dimen/_15sdp"
                             android:paddingStart="@dimen/_10sdp"
                             android:paddingBottom="@dimen/_10sdp"
+                            android:inputType="number"
+
                             android:background="@android:color/transparent"
                             android:hint="@string/no_of_boxes_hint"
                             android:textSize="@dimen/_10sdp"/>
@@ -264,7 +274,7 @@
                             android:gravity="end"
                             android:textColor="@android:color/white"
                             android:background="@color/colorPrimary"
-                            android:text="@string/box_size_label_one"
+                            android:text="@string/box_size_label_five"
                             android:textSize="@dimen/_10sdp"/>
 
 
@@ -275,6 +285,8 @@
                             android:paddingTop="@dimen/_15sdp"
                             android:paddingStart="@dimen/_10sdp"
                             android:paddingBottom="@dimen/_10sdp"
+                            android:inputType="number"
+
                             android:background="@android:color/transparent"
                             android:hint="@string/no_of_boxes_hint"
                             android:textSize="@dimen/_10sdp"/>
@@ -360,7 +372,9 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:paddingTop="@dimen/_15sdp"
+                    android:inputType="number"
                     android:paddingStart="@dimen/_10sdp"
+                    android:hint="@string/no_of_pieces"
                     android:paddingBottom="@dimen/_10sdp"
                     android:background="@android:color/transparent"
                     android:textSize="@dimen/_10sdp"/>
@@ -395,7 +409,9 @@
                     android:layout_weight="2"
                     android:paddingTop="@dimen/_15sdp"
                     android:paddingStart="@dimen/_10sdp"
+                    android:hint="@string/no_of_pieces"
                     android:paddingBottom="@dimen/_10sdp"
+                    android:inputType="number"
                     android:background="@android:color/transparent"
                     android:textSize="@dimen/_10sdp"/>
 
@@ -483,6 +499,8 @@
                             android:paddingStart="@dimen/_10sdp"
                             android:hint="@string/meters_hint"
                             android:paddingBottom="@dimen/_10sdp"
+                            android:inputType="number"
+
                             android:background="@android:color/transparent"
                             android:textSize="@dimen/_10sdp"/>
 
@@ -517,6 +535,7 @@
                             android:paddingTop="@dimen/_15sdp"
                             android:paddingStart="@dimen/_10sdp"
                             android:hint="@string/meters_hint"
+                            android:inputType="number"
                             android:paddingBottom="@dimen/_10sdp"
                             android:background="@android:color/transparent"
                             android:textSize="@dimen/_10sdp"/>
@@ -602,6 +621,8 @@
                     android:layout_weight="2"
                     android:paddingTop="@dimen/_15sdp"
                     android:paddingStart="@dimen/_10sdp"
+                    android:inputType="numberDecimal"
+                    android:hint="@string/inches_textview"
                     android:paddingBottom="@dimen/_10sdp"
                     android:background="@android:color/transparent"
                     android:textSize="@dimen/_10sdp"/>
@@ -687,6 +708,8 @@
                         android:paddingTop="@dimen/_15sdp"
                         android:paddingStart="@dimen/_10sdp"
                         android:hint="@string/number_hint"
+                        android:inputType="number"
+
                         android:paddingBottom="@dimen/_10sdp"
                         android:background="@android:color/transparent"
                         android:textSize="@dimen/_10sdp"/>
@@ -722,6 +745,8 @@
                         android:paddingTop="@dimen/_15sdp"
                         android:paddingStart="@dimen/_10sdp"
                         android:hint="@string/number_hint"
+                        android:inputType="number"
+
                         android:paddingBottom="@dimen/_10sdp"
                         android:background="@android:color/transparent"
                         android:textSize="@dimen/_10sdp"/>
@@ -766,7 +791,7 @@
                 android:visibility="visible"
                 android:text="@string/submit_button_textview"
                 android:textColor="@android:color/white"
-                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:textAllCaps="false"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_40sdp"

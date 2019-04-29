@@ -518,7 +518,7 @@
 
 
                             <EditText
-                                android:id="@+id/rental_volume"
+                                android:id="@+id/rental_weight"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2"
@@ -556,6 +556,7 @@
 
 
                             <EditText
+                                android:id="@+id/rental_volume"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2"
@@ -664,6 +665,14 @@
                 android:background="@color/view_bgcolor"/>
 
 
+            <ProgressBar
+                android:id="@+id/truckRental_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_gravity="center"/>
+
+
 
 
                 <TextView
@@ -727,6 +736,7 @@
 
 
                 <Button
+                    android:id="@+id/truckRental_submitBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/colorPrimary"
