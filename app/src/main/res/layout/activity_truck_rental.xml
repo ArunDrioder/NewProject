@@ -19,9 +19,10 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:layout_width="@dimen/_30sdp"
-                    android:layout_height="@dimen/_30sdp"
-                    android:layout_marginTop="@dimen/_8sdp"
+                    android:id="@+id/truckRental_backArrow"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
                     android:src="@drawable/ic_arrow_back_black_24dp"/>
 
                 <TextView
@@ -82,25 +83,11 @@
                 android:layout_marginTop="@dimen/_10sdp"/>
 
 
-
-
-
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_1sdp"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginEnd="@dimen/_20sdp"
-                android:background="@color/view_bgcolor"/>
-
-
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_8sdp"
-                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_20sdp"
                 android:text="@string/package_type_textview"
                 android:textStyle="bold"
                 android:layout_marginStart="@dimen/_20sdp"
@@ -112,7 +99,7 @@
             <RadioGroup
 
                 android:id="@+id/truckRental_packageType"
-                android:layout_margin="@dimen/_20sdp"
+                android:layout_margin="@dimen/_10sdp"
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -135,13 +122,7 @@
 
             </RadioGroup>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_1sdp"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginEnd="@dimen/_20sdp"
-                android:background="@color/view_bgcolor"/>
+
 
 
 
@@ -153,7 +134,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_25sdp"
                 android:layout_marginEnd="@dimen/_25sdp"
-                android:layout_marginTop="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_20sdp"
                 app:cardCornerRadius="@dimen/_10sdp"
                 app:cardElevation="@dimen/_6sdp">
 
@@ -170,7 +151,9 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true">
 
                         <TextView
                             android:layout_width="0dp"
@@ -193,6 +176,7 @@
                             android:layout_weight="2"
                             android:paddingTop="@dimen/_15sdp"
                             android:paddingStart="@dimen/_10sdp"
+                            android:inputType="text"
                             android:paddingBottom="@dimen/_10sdp"
                             android:background="@android:color/transparent"
                             android:hint="@string/place_hint"
@@ -234,6 +218,7 @@
                             android:paddingBottom="@dimen/_10sdp"
                             android:background="@android:color/transparent"
                             android:hint="@string/place_hint"
+                            android:inputType="text"
                             android:textSize="@dimen/_10sdp"/>
 
                     </LinearLayout>
@@ -273,6 +258,7 @@
                             android:paddingBottom="@dimen/_10sdp"
                             android:background="@android:color/transparent"
                             android:hint="@string/address_hint"
+                            android:inputType="text"
                             android:textSize="@dimen/_10sdp"/>
 
                     </LinearLayout>
@@ -283,13 +269,7 @@
             </android.support.v7.widget.CardView>
 
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_1sdp"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginEnd="@dimen/_20sdp"
-                android:background="@color/view_bgcolor"/>
+
 
 
 
@@ -311,7 +291,7 @@
 
             <RadioGroup
                 android:id="@+id/labourSupplyRadioGrp"
-                android:layout_margin="@dimen/_20sdp"
+                android:layout_margin="@dimen/_10sdp"
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -351,7 +331,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_8sdp"
-                android:layout_marginTop="@dimen/_34sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:text="@string/labour_details_textview"
                 android:layout_marginStart="@dimen/_20sdp"
                 android:textStyle="bold"
@@ -370,7 +350,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_25sdp"
                     android:layout_marginEnd="@dimen/_25sdp"
-                    android:layout_marginTop="@dimen/_25sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
                     app:cardCornerRadius="@dimen/_10sdp"
                     app:cardElevation="@dimen/_6sdp">
 
@@ -411,6 +391,7 @@
                                 android:paddingTop="@dimen/_15sdp"
                                 android:paddingStart="@dimen/_10sdp"
                                 android:paddingBottom="@dimen/_10sdp"
+                                android:inputType="number"
                                 android:background="@android:color/transparent"
                                 android:hint="@string/no_of_labours_textview"
                                 android:textSize="@dimen/_10sdp"/>
@@ -451,6 +432,7 @@
                                 android:paddingBottom="@dimen/_10sdp"
                                 android:background="@android:color/transparent"
                                 android:hint="@string/goods_hint"
+                                android:inputType="text"
                                 android:textSize="@dimen/_10sdp"/>
 
                         </LinearLayout>
@@ -490,6 +472,8 @@
                                 android:paddingBottom="@dimen/_10sdp"
                                 android:background="@android:color/transparent"
                                 android:hint="@string/quantity_textview"
+
+                                android:inputType="number"
                                 android:textSize="@dimen/_10sdp"/>
 
                         </LinearLayout>
@@ -527,6 +511,7 @@
                                 android:paddingBottom="@dimen/_10sdp"
                                 android:background="@android:color/transparent"
                                 android:hint="@string/weight_textview"
+                                android:inputType="numberDecimal"
                                 android:textSize="@dimen/_10sdp"/>
 
                         </LinearLayout>
@@ -565,6 +550,7 @@
                                 android:paddingBottom="@dimen/_10sdp"
                                 android:background="@android:color/transparent"
                                 android:hint="@string/volume_textview"
+                                android:inputType="numberDecimal"
                                 android:textSize="@dimen/_10sdp"/>
 
                         </LinearLayout>
@@ -576,13 +562,7 @@
 
             </LinearLayout>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_1sdp"
-                    android:layout_marginTop="@dimen/_20sdp"
-                    android:layout_marginStart="@dimen/_20sdp"
-                    android:layout_marginEnd="@dimen/_20sdp"
-                    android:background="@color/view_bgcolor"/>
+
 
 
 
@@ -636,6 +616,7 @@
                             android:paddingBottom="@dimen/_10sdp"
                             android:background="@android:color/transparent"
                             android:hint="@string/meters_hint"
+                            android:inputType="numberDecimal"
                             android:textSize="@dimen/_10sdp"/>
 
                     </LinearLayout>
@@ -644,25 +625,13 @@
 
 
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_1sdp"
-                    android:layout_marginTop="@dimen/_20sdp"
-                    android:layout_marginStart="@dimen/_20sdp"
-                    android:layout_marginEnd="@dimen/_20sdp"
-                    android:background="@color/view_bgcolor"/>
 
 
 
 
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_1sdp"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginEnd="@dimen/_20sdp"
-                android:background="@color/view_bgcolor"/>
+
+
 
 
             <ProgressBar
@@ -679,7 +648,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/_8sdp"
-                    android:layout_marginTop="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
                     android:text="@string/special_instructions_textview"
                     android:textStyle="bold"
                     android:layout_marginStart="@dimen/_20sdp"
@@ -698,25 +667,13 @@
                     android:inputType="textMultiLine"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:paddingStart="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_10sdp"
                     android:paddingTop="@dimen/_10sdp"
                     android:paddingBottom="@dimen/_20sdp"
                     android:hint="@string/insrtuctions_here_hint"/>
 
 
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_1sdp"
-                    android:layout_marginTop="@dimen/_20sdp"
-                    android:layout_marginStart="@dimen/_20sdp"
-                    android:layout_marginEnd="@dimen/_20sdp"
-                    android:background="@color/view_bgcolor"/>
-
-
-
-
-
-        <LinearLayout
+            <LinearLayout
             android:layout_width="match_parent"
             android:layout_marginTop="@dimen/_20sdp"
             android:layout_height="wrap_content"
@@ -738,14 +695,16 @@
                 <Button
                     android:id="@+id/truckRental_submitBtn"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/colorPrimary"
+                    android:background="@drawable/button_bg"
+                    android:visibility="visible"
                     android:text="@string/submit_button_textview"
+                    android:textColor="@android:color/white"
                     android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:layout_marginEnd="@dimen/_10sdp"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_40sdp"/>
 
 
 

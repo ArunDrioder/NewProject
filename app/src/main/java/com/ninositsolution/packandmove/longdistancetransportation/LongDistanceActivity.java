@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -24,6 +25,7 @@ public class LongDistanceActivity extends AppCompatActivity {
     final Calendar myCalendar = Calendar.getInstance();
     final Calendar myCalendar2 = Calendar.getInstance();
     EditText longPickupDate, longDeliveryDate;
+    ImageView longDistance_backArrow;
 
 
     @Override
@@ -37,6 +39,18 @@ public class LongDistanceActivity extends AppCompatActivity {
         packagingNoBtn = findViewById(R.id.packagingNoRadioBtn);
         longPickupDate = findViewById(R.id.longTransport_pickupDate);
         longDeliveryDate = findViewById(R.id.longTransport_dropDate);
+        longDistance_backArrow = findViewById(R.id.longDistance_backArrow);
+        longDistance_backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goBack();
+            }
+        });
+
+
+
+
+
 
         final DatePickerDialog.OnDateSetListener datePickup = new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -131,5 +145,10 @@ public class LongDistanceActivity extends AppCompatActivity {
 
 
 
+    }
+
+    private void goBack()
+    {
+        super.onBackPressed();
     }
 }

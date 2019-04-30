@@ -1,6 +1,7 @@
 package com.ninositsolution.packandmove;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -27,6 +28,7 @@ import com.ninositsolution.packandmove.longdistancetransportation.LongDistanceAc
 import com.ninositsolution.packandmove.packaging.PackagingActivity;
 import com.ninositsolution.packandmove.temporarystorage.TemproaryStorageActivity;
 import com.ninositsolution.packandmove.truckrental.TruckRentalActivity;
+import com.ninositsolution.packandmove.utils.Session;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
     private NavigationView nv;
 
     LinearLayout factory,packaging,carton,longDistance,truck,doortodoor,temproary,international,labour,custom;
+
+    private Context context;
 
 
     @Override
@@ -92,6 +96,8 @@ public class MainActivity extends AppCompatActivity {
         custom = (LinearLayout)findViewById(R.id.customLayout);
         logOut = (ImageView)findViewById(R.id.logOutImgView);
 
+        context = MainActivity.this;
+
         logOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -105,6 +111,8 @@ public class MainActivity extends AppCompatActivity {
                 logOutYesAlertBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        Session.setUserId("", context);
                         Intent  intent = new Intent(MainActivity.this,LoginActivity.class);
                         startActivity(intent);
                         finish();

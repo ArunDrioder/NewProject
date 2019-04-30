@@ -24,6 +24,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
@@ -41,6 +42,7 @@ import com.ninositsolution.packandmove.retrofit.RetrofitInterface;
 import com.ninositsolution.packandmove.truckrental.pojo.TruckRentalRequest;
 import com.ninositsolution.packandmove.utils.Session;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.ArrayList;
@@ -55,6 +57,7 @@ public class TruckRentalActivity extends AppCompatActivity implements OnItemClic
     RadioGroup labourSupplyRadioGrp;
     RadioButton labourYesRadioBtn;
     RadioButton labourNoRadioBtn;
+    ImageView truckRental_backArrow;
     RecyclerView truckRentalRecyclerView;
     TruckRecyclerViewAdapter truckRecyclerViewAdapter;
     Spinner truckType;
@@ -95,6 +98,7 @@ public class TruckRentalActivity extends AppCompatActivity implements OnItemClic
         truckRental_package = findViewById(R.id.truckRental_packageType);
         openType = findViewById(R.id.openPackageType);
         boxType = findViewById(R.id.boxPackageType);
+        truckRental_backArrow = findViewById(R.id.truckRental_backArrow);
 
         truckType = findViewById(R.id.truck_rental_trucktype);
         truckRentalRecyclerView = findViewById(R.id.truckRental_RecyclerView);
@@ -109,6 +113,15 @@ public class TruckRentalActivity extends AppCompatActivity implements OnItemClic
         rentalDistance = findViewById(R.id.truckRental_distance);
         rentalRemarks = findViewById(R.id.truckRental_remarks);
         progressBar = findViewById(R.id.truckRental_progress);
+
+        truckRental_backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goBack();
+            }
+        });
+
+
 
 
 
@@ -290,6 +303,11 @@ public class TruckRentalActivity extends AppCompatActivity implements OnItemClic
 
     }
 
+    private void goBack()
+    {
+        super.onBackPressed();
+    }
+
     @Override
     public void onClick(View view, int position)
     {
@@ -370,37 +388,41 @@ public class TruckRentalActivity extends AppCompatActivity implements OnItemClic
             Matrix mat = new Matrix();
             mat.postRotate(Integer.parseInt("270"));
             Bitmap bMapRotate = Bitmap.createBitmap(photo, 0, 0, photo.getWidth(), photo.getHeight(), mat, true);
-            truckArrayList.add(getPath(context,data.getData()));
+            Uri tempUri = getImageUri(getApplicationContext(), photo);
+
+            Log.i(TAG,"path is: ->" +getRealPathFromURI(tempUri));
+            truckArrayList.add(getRealPathFromURI(tempUri));
             truckRecyclerViewAdapter.notifyDataSetChanged();
         }
 
         if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && data != null)
         {
             Uri selectedImageURI = data.getData();
-            truckArrayList.add(getPath(context, data.getData()));
+            truckArrayList.add(getRealPathFromURI(data.getData()));
             truckRecyclerViewAdapter.notifyDataSetChanged();
         }
     }
 
-    private static String getPath(Context context, Uri data)
-    {
-        String result = null;
-        String[] proj = { MediaStore.Images.Media.DATA };
-        Cursor cursor = context.getContentResolver( ).query( data, proj, null, null, null );
-        if(cursor != null){
-            if ( cursor.moveToFirst( ))
-            {
-                int column_index = cursor.getColumnIndexOrThrow( proj[0] );
-                result = cursor.getString(column_index);
-            }
-            cursor.close( );
-        }
-        if(result == null) {
-            result = "Not found";
-        }
-        return result;
+    public Uri getImageUri(Context inContext, Bitmap inImage)
 
+    {
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+        String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
+        return Uri.parse(path);
     }
+
+
+
+    public String getRealPathFromURI(Uri uri)
+
+    {
+        Cursor cursor = context.getContentResolver().query(uri, null, null, null, null);
+        cursor.moveToFirst();
+        int idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
+        return cursor.getString(idx);
+    }
+
 
 
     private String convertTobase64(String path) {

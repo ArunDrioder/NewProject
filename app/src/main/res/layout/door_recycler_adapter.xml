@@ -21,14 +21,15 @@
 
         android:layout_width="@dimen/_60sdp"
         android:layout_height="@dimen/_60sdp"
-        android:layout_gravity="center_vertical">
+        android:layout_marginStart="@dimen/_20sdp">
 
-        <ImageView
+
+    <ImageView
             android:id="@+id/doorToDoorAddedImage"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitXY"
-            android:layout_gravity="center_vertical"/>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:layout_gravity="center_vertical"/>
         <Button
             android:id="@+id/removeImage"
             android:background="@drawable/ic_cancel_green_24dp"
@@ -44,8 +45,8 @@
 
     <LinearLayout
         android:id="@+id/doorServiceAddPhotoLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
         android:orientation="vertical"
         android:visibility="gone"
         android:paddingBottom="@dimen/_4sdp"
@@ -56,15 +57,17 @@
 
 
         <ImageView
-            android:layout_width="@dimen/_40sdp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
             android:layout_margin="@dimen/_10sdp"
+            android:layout_gravity="center"
             android:src="@drawable/ic_add_circle_black_24dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_4sdp"
+            android:layout_gravity="center"
             android:text="@string/add_photo_textview"
             android:textAlignment="center"/>
 

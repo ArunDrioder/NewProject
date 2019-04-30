@@ -217,6 +217,7 @@
     <string name="days">Days</string>
     <string name="floors">Floors</string>
     <string name="no_of_pieces">No of Pieces</string>
+    <string name="temporary_storage">Temporary Storage</string>
 
 
 </resources>

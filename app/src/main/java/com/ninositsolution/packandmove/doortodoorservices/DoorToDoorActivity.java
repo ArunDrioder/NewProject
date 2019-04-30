@@ -2,6 +2,8 @@ package com.ninositsolution.packandmove.doortodoorservices;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -22,8 +24,11 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.ninositsolution.packandmove.MainActivity;
@@ -37,7 +42,10 @@ import com.ninositsolution.packandmove.utils.Session;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -47,8 +55,11 @@ public class DoorToDoorActivity extends AppCompatActivity implements OnItemClick
     EditText pickupPlace, pickupDate, pickupTime, dropPlace,dropDate,dropTime, typesOfGoods,estimatedWeight,estimatedVolume,doorRemarks;
     String pickPlace,pickDate,pickTime,droppingPlace,droppingDate,droppingTime,goodsType,weight,volume,remark,uploaded_photos;
     Button doorSubmitBtn;
+    ImageView doorToDoor_backArrow;
     ProgressBar progressBar;
     RecyclerView doorRecyclerView;
+    final Calendar myCalendar = Calendar.getInstance();
+    final Calendar myCalendar2 = Calendar.getInstance();
     private static final int REQUEST_CAMERA = 100;
     private static final int RESULT_LOAD_IMAGE = 101;
     private static final String TAG = "DoorToDoorActivity";
@@ -75,11 +86,146 @@ public class DoorToDoorActivity extends AppCompatActivity implements OnItemClick
         estimatedVolume = findViewById(R.id.goodsVolume);
         progressBar = findViewById(R.id.door_progress);
         doorRemarks = findViewById(R.id.goodsRemarks);
-
+        doorToDoor_backArrow =findViewById(R.id.doorToDoor_backArrow);
         doorRecyclerView = findViewById(R.id.doorTodoorRecyclerView);
         context = DoorToDoorActivity.this;
         doorArrayList = new ArrayList<>();
         base64ArrayList = new ArrayList<>();
+
+
+        doorToDoor_backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goBack();
+            }
+        });
+
+
+
+
+
+
+
+
+        final DatePickerDialog.OnDateSetListener datePickup = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH, monthOfYear);
+                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                updatePickLabel();
+
+
+            }
+
+            private void updatePickLabel() {
+                String pickDateFormat = "dd/MM/yyyy";
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pickDateFormat, Locale.US);
+
+                pickupDate.setText(simpleDateFormat.format(myCalendar.getTime()));
+
+
+            }
+        };
+
+        pickupDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                new DatePickerDialog(DoorToDoorActivity.this,datePickup,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+
+
+
+            }
+        });
+
+
+
+        final DatePickerDialog.OnDateSetListener dateDelivery = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth)
+            {
+                myCalendar2.set(Calendar.YEAR, year);
+                myCalendar2.set(Calendar.MONTH, monthOfYear);
+                myCalendar2.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                updateDropLabel();
+
+            }
+
+            private void updateDropLabel()
+            {
+                String deliverDateFormat = "dd/MM/yyyy";
+                SimpleDateFormat sdf = new SimpleDateFormat(deliverDateFormat, Locale.US);
+                dropDate.setText(sdf.format(myCalendar2.getTime()));
+
+
+            }
+        };
+
+
+
+
+
+        dropDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                new DatePickerDialog(DoorToDoorActivity.this,dateDelivery,myCalendar2.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar2.get(Calendar.DAY_OF_MONTH)).show();
+
+            }
+        });
+
+
+
+        pickupTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calendar mcurrentTime = Calendar.getInstance();
+                int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
+                int minute = mcurrentTime.get(Calendar.MINUTE);
+
+                TimePickerDialog mTimePicker;
+
+                mTimePicker = new TimePickerDialog(DoorToDoorActivity.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute)
+                    {
+                        pickupTime.setText( selectedHour + ":" + selectedMinute);
+
+
+                    }
+                }, hour, minute, false);
+                mTimePicker.setTitle("Select Time");
+                mTimePicker.show();
+            }
+        });
+
+
+        dropTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                Calendar mcurrentTime = Calendar.getInstance();
+                int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
+                int minute = mcurrentTime.get(Calendar.MINUTE);
+
+                TimePickerDialog mTimePicker;
+
+                mTimePicker = new TimePickerDialog(DoorToDoorActivity.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute)
+                    {
+                        dropTime.setText( selectedHour + ":" + selectedMinute);
+
+
+                    }
+                }, hour, minute, false);
+                mTimePicker.setTitle("Select Time");
+                mTimePicker.show();
+
+            }
+        });
+
 
 
         ViewGroup.LayoutParams params = doorRecyclerView.getLayoutParams();
@@ -187,6 +333,11 @@ public class DoorToDoorActivity extends AppCompatActivity implements OnItemClick
         });
     }
 
+    private void goBack()
+    {
+        super.onBackPressed();
+    }
+
     @Override
     public void onClick(View view, int position)
     {
@@ -289,7 +440,9 @@ public class DoorToDoorActivity extends AppCompatActivity implements OnItemClick
     }
 
 
-    public Uri getImageUri(Context inContext, Bitmap inImage) {
+    public Uri getImageUri(Context inContext, Bitmap inImage)
+
+    {
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
         inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
         String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
@@ -298,7 +451,9 @@ public class DoorToDoorActivity extends AppCompatActivity implements OnItemClick
 
 
 
-    public String getRealPathFromURI(Uri uri) {
+    public String getRealPathFromURI(Uri uri)
+
+    {
         Cursor cursor = context.getContentResolver().query(uri, null, null, null, null);
         cursor.moveToFirst();
         int idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);

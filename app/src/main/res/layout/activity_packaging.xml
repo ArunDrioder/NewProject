@@ -20,9 +20,10 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:layout_width="@dimen/_30sdp"
-                    android:layout_height="@dimen/_30sdp"
-                    android:layout_marginTop="@dimen/_8sdp"
+                    android:id="@+id/packaging_backArrow"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
                     android:src="@drawable/ic_arrow_back_black_24dp"/>
 
                 <TextView
@@ -113,7 +114,7 @@
                             android:focusable="false"
                             android:clickable="true"
                             android:background="@android:color/transparent"
-                            android:hint="@string/date_hint"
+                            android:hint="@string/date_format"
                             android:textSize="@dimen/_10sdp"/>
 
                     </LinearLayout>
@@ -150,9 +151,9 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
                             android:paddingTop="@dimen/_15sdp"
-
-
                             android:paddingStart="@dimen/_10sdp"
+                            android:lines="1"
+                            android:inputType="text"
                             android:paddingBottom="@dimen/_10sdp"
                             android:background="@android:color/transparent"
                             android:hint="@string/current_location_hint"
@@ -192,8 +193,7 @@
                             android:layout_weight="2"
                             android:paddingTop="@dimen/_15sdp"
                             android:paddingStart="@dimen/_10sdp"
-
-
+                            android:maxLines="1"
                             android:paddingBottom="@dimen/_10sdp"
                             android:background="@android:color/transparent"
                             android:hint="@string/goods_hint"
@@ -233,7 +233,7 @@
                             android:paddingStart="@dimen/_10sdp"
                             android:paddingBottom="@dimen/_10sdp"
                             android:inputType="numberDecimal"
-
+                            android:maxLines="1"
 
                             android:background="@android:color/transparent"
                             android:hint="@string/volume_textview"
@@ -274,8 +274,7 @@
                             android:paddingBottom="@dimen/_10sdp"
                             android:background="@android:color/transparent"
                             android:hint="@string/weight_textview"
-
-
+                            android:maxLines="1"
                             android:inputType="numberDecimal"
                             android:textSize="@dimen/_10sdp"/>
 
@@ -316,6 +315,7 @@
                 android:inputType="textMultiLine"
                 android:layout_marginTop="@dimen/_40sdp"
                 android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
                 android:paddingTop="@dimen/_10sdp"
                 android:paddingBottom="@dimen/_100sdp"
                 android:textAlignment="center"
@@ -333,7 +333,8 @@
                 android:textColor="@android:color/white"
                 android:textAllCaps="false"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
                 android:layout_marginStart="@dimen/_40sdp"
                 android:layout_marginEnd="@dimen/_40sdp"/>
 

@@ -43,13 +43,16 @@
         <activity android:name=".OfficeRemovalActivity" />
         <activity android:name=".BasicInfoActivity" />
         <activity android:name=".Registration.RegistrationActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+
+        </activity>
     </application>
 
 </manifest>

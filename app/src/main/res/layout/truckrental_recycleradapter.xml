@@ -2,6 +2,7 @@
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
@@ -18,10 +19,9 @@
 
 
         <RelativeLayout
-
             android:layout_width="@dimen/_60sdp"
             android:layout_height="@dimen/_60sdp"
-            android:layout_gravity="center_vertical">
+            android:layout_marginStart="@dimen/_20sdp">
 
             <ImageView
                 android:id="@+id/truckAddedImage"
@@ -44,8 +44,8 @@
 
     <LinearLayout
         android:id="@+id/truckRentalAddPhotoLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
         android:orientation="vertical"
         android:visibility="gone"
         android:paddingBottom="@dimen/_4sdp"
@@ -56,15 +56,17 @@
 
 
         <ImageView
-            android:layout_width="@dimen/_40sdp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
             android:layout_margin="@dimen/_10sdp"
+            android:layout_gravity="center"
             android:src="@drawable/ic_add_circle_black_24dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_4sdp"
+            android:layout_gravity="center"
             android:text="@string/add_photo_textview"
             android:textAlignment="center"/>
 

@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -39,6 +40,7 @@ public class PackagingActivity extends AppCompatActivity {
     String user_id, token, dateOfPackaging, packageLocation, goodType, volumeOfPackaging, packageWeigh, remarks;
     Button submitPkgBtn;
     ProgressBar progressBar;
+    ImageView package_back;
     Context context;
     private POJOClass pojoClass;
 
@@ -56,6 +58,7 @@ public class PackagingActivity extends AppCompatActivity {
         packageWeight = findViewById(R.id.packageWeight);
         packageRemarks = findViewById(R.id.package_remarks);
         submitPkgBtn = findViewById(R.id.package_submitBtn);
+        package_back = findViewById(R.id.packaging_backArrow);
         context = PackagingActivity.this;
 
 
@@ -84,6 +87,13 @@ public class PackagingActivity extends AppCompatActivity {
             {
                 new DatePickerDialog(PackagingActivity.this,date,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
 
+            }
+        });
+
+        package_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               goBack();
             }
         });
 
@@ -202,4 +212,10 @@ public class PackagingActivity extends AppCompatActivity {
 
     }
         );
-}}
+}
+
+    private void goBack()
+    {
+        super.onBackPressed();
+    }
+}

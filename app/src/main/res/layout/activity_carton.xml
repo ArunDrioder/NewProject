@@ -20,9 +20,10 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:layout_width="@dimen/_30sdp"
-                    android:layout_height="@dimen/_30sdp"
-                    android:layout_marginTop="@dimen/_8sdp"
+                    android:id="@+id/carton_backArrow"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
                     android:src="@drawable/ic_arrow_back_black_24dp"/>
 
                 <TextView
@@ -60,7 +61,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/_30sdp"
                 android:background="@android:color/white">
 
 
@@ -125,6 +126,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
                             android:paddingTop="@dimen/_15sdp"
+                            android:maxLines="1"
                             android:paddingStart="@dimen/_10sdp"
                             android:paddingBottom="@dimen/_10sdp"
                             android:inputType="number"
@@ -166,6 +168,7 @@
                             android:paddingStart="@dimen/_10sdp"
                             android:paddingBottom="@dimen/_10sdp"
                             android:inputType="number"
+                            android:maxLines="1"
 
                             android:background="@android:color/transparent"
                             android:hint="@string/no_of_boxes_hint"
@@ -206,6 +209,7 @@
                             android:paddingStart="@dimen/_10sdp"
                             android:paddingBottom="@dimen/_10sdp"
                             android:inputType="number"
+                            android:maxLines="1"
 
                             android:background="@android:color/transparent"
                             android:hint="@string/no_of_boxes_hint"
@@ -245,6 +249,7 @@
                             android:paddingStart="@dimen/_10sdp"
                             android:paddingBottom="@dimen/_10sdp"
                             android:inputType="number"
+                            android:maxLines="1"
 
                             android:background="@android:color/transparent"
                             android:hint="@string/no_of_boxes_hint"
@@ -285,8 +290,8 @@
                             android:paddingTop="@dimen/_15sdp"
                             android:paddingStart="@dimen/_10sdp"
                             android:paddingBottom="@dimen/_10sdp"
-                            android:inputType="number"
-
+                            android:inputType ="number"
+                            android:maxLines="1"
                             android:background="@android:color/transparent"
                             android:hint="@string/no_of_boxes_hint"
                             android:textSize="@dimen/_10sdp"/>
@@ -299,13 +304,7 @@
             </android.support.v7.widget.CardView>
 
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_1sdp"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginEnd="@dimen/_20sdp"
-                 android:background="@color/view_bgcolor"/>
+
 
 
             <RelativeLayout
@@ -318,7 +317,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_34sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
                     android:layout_centerInParent="true"
                     android:text="@string/bubble_textview"
                     android:textStyle="bold"
@@ -374,6 +373,8 @@
                     android:paddingTop="@dimen/_15sdp"
                     android:inputType="number"
                     android:paddingStart="@dimen/_10sdp"
+                    android:maxLines="1"
+
                     android:hint="@string/no_of_pieces"
                     android:paddingBottom="@dimen/_10sdp"
                     android:background="@android:color/transparent"
@@ -410,6 +411,8 @@
                     android:paddingTop="@dimen/_15sdp"
                     android:paddingStart="@dimen/_10sdp"
                     android:hint="@string/no_of_pieces"
+                    android:maxLines="1"
+
                     android:paddingBottom="@dimen/_10sdp"
                     android:inputType="number"
                     android:background="@android:color/transparent"
@@ -421,13 +424,7 @@
 
         </android.support.v7.widget.CardView>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_1sdp"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginEnd="@dimen/_20sdp"
-                android:background="@color/view_bgcolor"/>
+
 
 
 
@@ -441,7 +438,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_34sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
                     android:layout_centerInParent="true"
                     android:text="@string/tape_textview"
                     android:textStyle="bold"
@@ -498,8 +495,10 @@
                             android:paddingTop="@dimen/_15sdp"
                             android:paddingStart="@dimen/_10sdp"
                             android:hint="@string/meters_hint"
+                            android:maxLines="1"
+
                             android:paddingBottom="@dimen/_10sdp"
-                            android:inputType="number"
+                            android:inputType="numberDecimal"
 
                             android:background="@android:color/transparent"
                             android:textSize="@dimen/_10sdp"/>
@@ -535,7 +534,7 @@
                             android:paddingTop="@dimen/_15sdp"
                             android:paddingStart="@dimen/_10sdp"
                             android:hint="@string/meters_hint"
-                            android:inputType="number"
+                            android:inputType="numberDecimal"
                             android:paddingBottom="@dimen/_10sdp"
                             android:background="@android:color/transparent"
                             android:textSize="@dimen/_10sdp"/>
@@ -547,13 +546,6 @@
             </android.support.v7.widget.CardView>
 
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_1sdp"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginEnd="@dimen/_20sdp"
-                android:background="@color/view_bgcolor"/>
 
 
             <RelativeLayout
@@ -566,7 +558,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_34sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
                     android:layout_centerInParent="true"
                     android:text="@string/foam_paper_textview"
                     android:textStyle="bold"
@@ -632,13 +624,6 @@
         </android.support.v7.widget.CardView>
 
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_1sdp"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginEnd="@dimen/_20sdp"
-                android:background="@color/view_bgcolor"/>
 
 
 
@@ -653,7 +638,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_34sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
                     android:layout_centerInParent="true"
                     android:text="@string/packing_paper"
                     android:textStyle="bold"
@@ -757,43 +742,38 @@
             </android.support.v7.widget.CardView>
 
 
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_1sdp"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginEnd="@dimen/_20sdp"
-                android:background="@color/view_bgcolor"/>
-
-
-
-
             <EditText
+                android:id="@+id/carton_remarks"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_layout"
                 android:layout_marginStart="@dimen/_30sdp"
                 android:layout_marginEnd="@dimen/_30sdp"
                 android:inputType="textMultiLine"
-                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_20sdp"
                 android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
                 android:paddingTop="@dimen/_10sdp"
-                android:paddingBottom="@dimen/_20sdp"
+                android:paddingBottom="@dimen/_100sdp"
+                android:textAlignment="center"
+
                 android:hint="@string/remarks_textview_hint"/>
 
 
 
+
+
             <Button
-                android:id="@+id/submit_button"
+                android:id="@+id/carton_submit_button"
                 android:layout_width="match_parent"
                 android:background="@drawable/button_bg"
                 android:visibility="visible"
                 android:text="@string/submit_button_textview"
                 android:textColor="@android:color/white"
-                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
                 android:textAllCaps="false"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
                 android:layout_marginStart="@dimen/_40sdp"
                 android:layout_marginEnd="@dimen/_40sdp"/>
 
