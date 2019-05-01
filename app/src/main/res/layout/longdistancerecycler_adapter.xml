@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+
+    <LinearLayout
+        android:id="@+id/longDistanceImageLayout"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+
+        <RelativeLayout
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_marginStart="@dimen/_20sdp">
+
+            <ImageView
+                android:id="@+id/longDistanceAddedImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:layout_gravity="center_vertical"/>
+            <Button
+                android:id="@+id/longDistanceRemoveImage"
+                android:background="@drawable/ic_cancel_green_24dp"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_10sdp"/>
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/longDistanceAddPhotoLayout"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:paddingBottom="@dimen/_4sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:background="@drawable/bg_layout">
+
+
+
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_add_circle_black_24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_gravity="center"
+            android:text="@string/add_photo_textview"
+            android:textAlignment="center"/>
+
+    </LinearLayout>
+
+</LinearLayout>

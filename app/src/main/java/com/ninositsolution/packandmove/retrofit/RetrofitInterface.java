@@ -4,6 +4,7 @@ import com.ninositsolution.packandmove.Otp.pojo.OTPRequest;
 import com.ninositsolution.packandmove.Registration.pojo.RegistrationRequest;
 import com.ninositsolution.packandmove.doortodoorservices.pojo.DoorServiceRequest;
 import com.ninositsolution.packandmove.laboursupply.pojo.LabourSupplyRequest;
+import com.ninositsolution.packandmove.longdistancetransportation.pojo.LongDistanceRequest;
 import com.ninositsolution.packandmove.packaging.pojo.PackageRequest;
 import com.ninositsolution.packandmove.pojo.POJOClass;
 import com.ninositsolution.packandmove.temporarystorage.pojo.StorageRequest;
@@ -45,7 +46,10 @@ Call<POJOClass> doorServiceApi (@Header("Authorization") String token, @Body Doo
 Call<POJOClass> labourSupplyApi(@Header("Authorization") String token, @Body LabourSupplyRequest labourSupplyRequest);
 
 @POST("insert/truck_rental")
-Call<POJOClass> truckRentalApi(@Header("Authorization") String token, @Body TruckRentalRequest truckRentalRequest);
+Call<POJOClass> truckRentalApi (@Header("Authorization") String token, @Body TruckRentalRequest truckRentalRequest);
+
+@POST("insert/long_distance_transporation")
+Call<POJOClass> longDistanceApi (@Header("Authorization") String token, @Body LongDistanceRequest longDistanceRequest);
 
 
 

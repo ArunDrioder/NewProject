@@ -104,6 +104,7 @@
 
 
                         <EditText
+                            android:id="@+id/longDistance_pickupFrom"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
@@ -142,6 +143,7 @@
 
 
                         <EditText
+                            android:id="@+id/pickup_floor"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
@@ -188,21 +190,21 @@
 
 
             <RadioGroup
+                android:id="@+id/pickup_elevator_radioGrp"
                 android:layout_margin="@dimen/_10sdp"
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <RadioButton
-
+                    android:id="@+id/pickup_YesElevatorRadioBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/yes_elevator"
                     android:textSize="18sp"/>
 
                 <RadioButton
-
+                    android:id="@+id/pickup_NoElevatorRadioBtn"
                     android:layout_width="match_parent"
                     android:layout_marginTop="@dimen/_8sdp"
                     android:layout_height="wrap_content"
@@ -371,6 +373,7 @@
 
 
                         <EditText
+                            android:id="@+id/longDistance_delivery"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
@@ -409,6 +412,7 @@
 
 
                         <EditText
+                            android:id="@+id/delivery_floor"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
@@ -454,21 +458,21 @@
 
 
             <RadioGroup
+                android:id="@+id/drop_elevator_radioGrp"
                 android:layout_margin="@dimen/_10sdp"
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <RadioButton
-
+                    android:id="@+id/dropYesElevatorRadioBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/yes_elevator"
                     android:textSize="18sp"/>
 
                 <RadioButton
-
+                    android:id="@+id/dropNoElevatorRadioBtn"
                     android:layout_width="match_parent"
                     android:layout_marginTop="@dimen/_8sdp"
                     android:layout_height="wrap_content"
@@ -636,6 +640,7 @@
 
 
                         <EditText
+                            android:id="@+id/longDistsanceWeight"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
@@ -674,6 +679,7 @@
 
 
                         <EditText
+                            android:id="@+id/longDistanceVolume"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
@@ -688,10 +694,49 @@
                     </LinearLayout>
 
 
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:background="#e2e2e2" />
+                        android:background="@color/view_bgcolor" />
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_15sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:gravity="end"
+                            android:textColor="@android:color/white"
+                            android:background="@color/colorPrimary"
+                            android:text="@string/quantity_textview"
+                            android:textSize="@dimen/_10sdp"/>
+
+
+                        <EditText
+                            android:id="@+id/longDistanceQuantity"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:paddingTop="@dimen/_15sdp"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:background="@android:color/transparent"
+                            android:hint="@string/quantity_textview"
+                            android:inputType="numberDecimal"
+                            android:textSize="@dimen/_10sdp"/>
+
+                    </LinearLayout>
+
+
+
 
 
 
@@ -792,6 +837,7 @@
 
 
                         <EditText
+                            android:id="@+id/longDistance_noOfPackages"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
@@ -866,6 +912,7 @@
 
 
                             <EditText
+                                android:id="@+id/longDistance_labour"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2"
@@ -908,7 +955,7 @@
 
 
             <Spinner
-
+                android:id="@+id/longDistance_goodsTypeSpin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_25sdp"
@@ -933,6 +980,36 @@
                 android:paddingBottom="@dimen/_100sdp"
                 android:textAlignment="center"
                 android:hint="@string/remarks_textview_hint"/>
+
+
+
+
+
+            <ProgressBar
+                android:id="@+id/longDistance_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_gravity="center"/>
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/longDistance_RecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                </android.support.v7.widget.RecyclerView>
+
+            </LinearLayout>
 
 
 
