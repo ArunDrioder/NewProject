@@ -3,6 +3,8 @@ package com.ninositsolution.packandmove.doortodoorservices.pojo;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
+
 public class DoorServiceRequest {
 
     @SerializedName("user_id")
@@ -51,7 +53,7 @@ public class DoorServiceRequest {
 
     @SerializedName("upload_photos")
     @Expose
-    public String upload_photos;
+    public ArrayList<String> upload_photos;
 
 
 
@@ -143,11 +145,9 @@ public class DoorServiceRequest {
         this.remark = remark;
     }
 
-    public String getUpload_photos() {
-        return upload_photos;
-    }
 
-    public void setUpload_photos(String upload_photos) {
+
+    public void setUpload_photos(ArrayList<String> upload_photos) {
         this.upload_photos = upload_photos;
     }
 }

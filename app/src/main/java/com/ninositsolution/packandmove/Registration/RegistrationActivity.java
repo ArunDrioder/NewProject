@@ -188,7 +188,8 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     private void hideProgressBar()
-    { if (progressBar.getVisibility() == View.VISIBLE)
+    {
+        if (progressBar.getVisibility() == View.VISIBLE)
     {
         progressBar.setVisibility(View.GONE);
     }

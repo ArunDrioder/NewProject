@@ -3,6 +3,8 @@ package com.ninositsolution.packandmove.truckrental.pojo;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
+
 public class TruckRentalRequest
 {
     @SerializedName("user_id")
@@ -63,9 +65,9 @@ public class TruckRentalRequest
     @Expose
     public String special_instruction;
 
-    @SerializedName("upload_photo")
+    @SerializedName("upload_photos")
     @Expose
-    public String upload_photo;
+    public ArrayList<String> upload_photos;
 
     public void setUser_id(String user_id) {
         this.user_id = user_id;
@@ -123,7 +125,7 @@ public class TruckRentalRequest
         this.special_instruction = special_instruction;
     }
 
-    public void setUpload_photo(String upload_photo) {
-        this.upload_photo = upload_photo;
+    public void setUpload_photos(ArrayList<String> upload_photos) {
+        this.upload_photos = upload_photos;
     }
 }

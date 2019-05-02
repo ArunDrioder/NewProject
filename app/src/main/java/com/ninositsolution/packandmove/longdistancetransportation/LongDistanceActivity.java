@@ -40,7 +40,6 @@ import com.ninositsolution.packandmove.longdistancetransportation.pojo.LongDista
 import com.ninositsolution.packandmove.pojo.POJOClass;
 import com.ninositsolution.packandmove.retrofit.RetrofitClient;
 import com.ninositsolution.packandmove.retrofit.RetrofitInterface;
-import com.ninositsolution.packandmove.truckrental.TruckRentalActivity;
 import com.ninositsolution.packandmove.utils.Session;
 
 import java.io.ByteArrayOutputStream;
@@ -103,6 +102,7 @@ public class LongDistanceActivity extends AppCompatActivity implements OnItemCli
         longDistanceNoOfPackages = findViewById(R.id.longDistance_noOfPackages);
         longDistanceLabour = findViewById(R.id.longDistance_labour);
         longDistanceRemarks = findViewById(R.id.longDistance_remarks);
+        longDistanceGoodsTypeSpin = findViewById(R.id.longDistance_goodsTypeSpin);
         longDistanceRecyclerView = findViewById(R.id.longDistance_RecyclerView);
         progressBar = findViewById(R.id.longDistance_progress);
 
@@ -115,16 +115,12 @@ public class LongDistanceActivity extends AppCompatActivity implements OnItemCli
         longDistanceRecyclerView.setLayoutManager(linearLayoutManager);
         longDistanceRecyclerView.setAdapter(longDistanceRecyclerViewAdapter);
 
-        ArrayAdapter longDistanceAdapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item);
-        longDistanceAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        ArrayAdapter longDistanceAdapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item, typesOfLongDistanceGoods);
+        longDistanceAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         longDistanceGoodsTypeSpin.setAdapter(longDistanceAdapter);
 
 
 
-
-
-
-        longDistanceGoodsTypeSpin = findViewById(R.id.longDistance_goodsTypeSpin);
 
 
         pickupElevatorRadioGrp = findViewById(R.id.pickup_elevator_radioGrp);
@@ -320,7 +316,6 @@ public class LongDistanceActivity extends AppCompatActivity implements OnItemCli
               {
                   longDistanceBase64ArrayList.add(convertTobase64(longDistanceArrayList.get(i)));
               }
-              longUploadPhotos = longDistanceBase64ArrayList.toString();
 
               LongDistanceRequest longDistanceRequest = new LongDistanceRequest();
               longDistanceRequest.setUser_id(Session.getUserId(context));
@@ -340,7 +335,7 @@ public class LongDistanceActivity extends AppCompatActivity implements OnItemCli
               longDistanceRequest.setPackagee(longPackage);
               longDistanceRequest.setLabour(longLabour);
               longDistanceRequest.setSpecial_instruction(longRemarks);
-              longDistanceRequest.setUpload_photos(longUploadPhotos);
+              longDistanceRequest.setUpload_photos(longDistanceBase64ArrayList);
 
               RetrofitInterface retrofitInterface = RetrofitClient.getClient().create(RetrofitInterface.class);
               Call<POJOClass> LongDistance = retrofitInterface.longDistanceApi("Bearer "+Session.getToken(context), longDistanceRequest);
@@ -525,7 +520,9 @@ public class LongDistanceActivity extends AppCompatActivity implements OnItemCli
         return cursor.getString(idx);
     }
 
-    private String convertTobase64(String path) {
+    private String convertTobase64(String path)
+
+    {
 
         String base64 = "";
         File file = new File(path);
@@ -533,8 +530,13 @@ public class LongDistanceActivity extends AppCompatActivity implements OnItemCli
 
             byte[] buffer = new byte[(int) file.length() + 100];
             int length = new FileInputStream(file).read(buffer);
-            base64 = "data:image/jpeg;base64,"+ Base64.encodeToString(buffer, 0, length,
+//            base64 = "data:image/jpeg;base64,"+ Base64.encodeToString(buffer, 0, length,
+//                    Base64.DEFAULT);
+
+            base64 =  Base64.encodeToString(buffer, 0, length,
                     Base64.DEFAULT);
+
+
             Log.d("base64 image", base64);
         }catch (Exception e){
             e.printStackTrace();

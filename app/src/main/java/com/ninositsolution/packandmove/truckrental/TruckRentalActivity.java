@@ -34,8 +34,7 @@ import android.widget.Toast;
 
 import com.ninositsolution.packandmove.MainActivity;
 import com.ninositsolution.packandmove.R;
-import com.ninositsolution.packandmove.doortodoorservices.DoorRecyclerViewAdapter;
-import com.ninositsolution.packandmove.doortodoorservices.DoorToDoorActivity;
+
 import com.ninositsolution.packandmove.pojo.POJOClass;
 import com.ninositsolution.packandmove.retrofit.RetrofitClient;
 import com.ninositsolution.packandmove.retrofit.RetrofitInterface;
@@ -121,11 +120,6 @@ public class TruckRentalActivity extends AppCompatActivity implements OnItemClic
             }
         });
 
-
-
-
-
-
         ViewGroup.LayoutParams params = truckRentalRecyclerView.getLayoutParams();
         params.height =500;
         truckRentalRecyclerView.setLayoutParams(params);
@@ -138,7 +132,7 @@ public class TruckRentalActivity extends AppCompatActivity implements OnItemClic
 
 
         ArrayAdapter truckAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, typeOfTruck);
-        truckAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        truckAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         truckType.setAdapter(truckAdapter);
 
 
@@ -228,7 +222,7 @@ public class TruckRentalActivity extends AppCompatActivity implements OnItemClic
                 {
                     truckBase64ArrayList.add(convertTobase64(truckArrayList.get(i)));
                 }
-                uploaded_photos =  truckBase64ArrayList.toString();
+
 
                 TruckRentalRequest truckRentalRequest = new TruckRentalRequest();
                 truckRentalRequest.setUser_id(Session.getUserId(context));
@@ -245,7 +239,7 @@ public class TruckRentalActivity extends AppCompatActivity implements OnItemClic
                 truckRentalRequest.setType_of_goods(rentalGoods);
                 truckRentalRequest.setDistance_meter(distance);
                 truckRentalRequest.setSpecial_instruction(remarks);
-                truckRentalRequest.setUpload_photo(uploaded_photos);
+                truckRentalRequest.setUpload_photos(truckBase64ArrayList);
 
                 RetrofitInterface retrofitInterface = RetrofitClient.getClient().create(RetrofitInterface.class);
                 Call<POJOClass> TruckRental = retrofitInterface.truckRentalApi("Bearer "+ Session.getToken(context), truckRentalRequest);
@@ -321,6 +315,7 @@ public class TruckRentalActivity extends AppCompatActivity implements OnItemClic
         truckArrayList.remove(position);
         truckRecyclerViewAdapter = new TruckRecyclerViewAdapter(truckArrayList,context,this);
         truckRentalRecyclerView.setAdapter(truckRecyclerViewAdapter);
+        Log.i(TAG,"truckArrayList is ->;" +truckArrayList);
 
     }
 
@@ -393,6 +388,7 @@ public class TruckRentalActivity extends AppCompatActivity implements OnItemClic
             Log.i(TAG,"path is: ->" +getRealPathFromURI(tempUri));
             truckArrayList.add(getRealPathFromURI(tempUri));
             truckRecyclerViewAdapter.notifyDataSetChanged();
+            Log.i(TAG,"truckArrayList->" +truckArrayList);
         }
 
         if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && data != null)
@@ -400,6 +396,7 @@ public class TruckRentalActivity extends AppCompatActivity implements OnItemClic
             Uri selectedImageURI = data.getData();
             truckArrayList.add(getRealPathFromURI(data.getData()));
             truckRecyclerViewAdapter.notifyDataSetChanged();
+            Log.i(TAG,"truckArrayList->" +truckArrayList);
         }
     }
 
@@ -425,7 +422,9 @@ public class TruckRentalActivity extends AppCompatActivity implements OnItemClic
 
 
 
-    private String convertTobase64(String path) {
+    private String convertTobase64(String path)
+
+    {
 
         String base64 = "";
         File file = new File(path);
@@ -433,8 +432,13 @@ public class TruckRentalActivity extends AppCompatActivity implements OnItemClic
 
             byte[] buffer = new byte[(int) file.length() + 100];
             int length = new FileInputStream(file).read(buffer);
-            base64 = "data:image/jpeg;base64,"+ Base64.encodeToString(buffer, 0, length,
+//            base64 = "data:image/jpeg;base64,"+ Base64.encodeToString(buffer, 0, length,
+//                    Base64.DEFAULT);
+
+            base64 =  Base64.encodeToString(buffer, 0, length,
                     Base64.DEFAULT);
+
+
             Log.d("base64 image", base64);
         }catch (Exception e){
             e.printStackTrace();
@@ -442,7 +446,6 @@ public class TruckRentalActivity extends AppCompatActivity implements OnItemClic
         return base64;
 
     }
-
 
 
 

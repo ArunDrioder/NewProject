@@ -261,8 +261,6 @@ public class DoorToDoorActivity extends AppCompatActivity implements OnItemClick
                     base64ArrayList.add(convertTobase64(doorArrayList.get(i)));
                 }
 
-                uploaded_photos = base64ArrayList.toString();
-
                 DoorServiceRequest doorServiceRequest = new DoorServiceRequest();
                 doorServiceRequest.setUser_id(Session.getUserId(context));
                 doorServiceRequest.setPickup_from(pickPlace);
@@ -275,7 +273,7 @@ public class DoorToDoorActivity extends AppCompatActivity implements OnItemClick
                 doorServiceRequest.setWeight(weight);
                 doorServiceRequest.setVolume(volume);
                 doorServiceRequest.setRemark(remark);
-                doorServiceRequest.setUpload_photos(uploaded_photos);
+                doorServiceRequest.setUpload_photos(base64ArrayList);
 
                 RetrofitInterface retrofitInterface = RetrofitClient.getClient().create(RetrofitInterface.class);
                 Call<POJOClass> DoorService = retrofitInterface.doorServiceApi("Bearer " + Session.getToken(context), doorServiceRequest);
@@ -421,20 +419,19 @@ public class DoorToDoorActivity extends AppCompatActivity implements OnItemClick
             Uri tempUri = getImageUri(getApplicationContext(), photo);
 
             Log.i(TAG,"path is: ->" +getRealPathFromURI(tempUri));
-
             doorArrayList.add(getRealPathFromURI(tempUri));
             doorRecyclerViewAdapter.notifyDataSetChanged();
+            Log.i(TAG,"doorArrayList->" +doorArrayList);
+
 
         }
 
         if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && data != null)
         {
             Uri selectedImageURI = data.getData();
-
+            doorArrayList.add(getRealPathFromURI(data.getData()));
             doorRecyclerViewAdapter.notifyDataSetChanged();
             Log.i(TAG,"doorArrayList->" +doorArrayList);
-            doorArrayList.add(getRealPathFromURI(data.getData()));
-
         }
 
     }
@@ -471,8 +468,13 @@ public class DoorToDoorActivity extends AppCompatActivity implements OnItemClick
 
             byte[] buffer = new byte[(int) file.length() + 100];
             int length = new FileInputStream(file).read(buffer);
-            base64 = "data:image/jpeg;base64,"+ Base64.encodeToString(buffer, 0, length,
+//            base64 = "data:image/jpeg;base64,"+ Base64.encodeToString(buffer, 0, length,
+//                    Base64.DEFAULT);
+
+            base64 =  Base64.encodeToString(buffer, 0, length,
                     Base64.DEFAULT);
+
+
             Log.d("base64 image", base64);
         }catch (Exception e){
             e.printStackTrace();
